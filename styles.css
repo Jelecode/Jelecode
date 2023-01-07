@@ -1,3 +1,5 @@
+/* Styles for big screens */
+
 /* Master styles */
 
 body {
@@ -118,4 +120,85 @@ body {
 
 .profile-content-wrapper h1 {
     color: lightseagreen;
+}
+
+
+
+
+
+
+
+/* Mobile optimisation */
+
+@media screen and (max-width: 800px) {
+
+/* Navigation styles */
+
+.navigation-wrapper {
+    padding: 8px;
+}
+
+.left-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 8px;
+}
+
+.navigation-wrapper > .left-side > div {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.navigation-link-wrapper {
+    height: 20px;
+}
+
+.active-navigation-link {
+    border-bottom: transparent;
+}
+
+.active-navigation-link a {
+    color: black !important;
+}
+
+.brand {
+    color: transparent;
+}
+
+/* Home styles */
+
+.portfolio-items-wrapper {
+    grid-template-columns: 1fr;
+}
+
+.portfolio-image-background {
+    filter: brightness(60%);
+}
+
+.logo-wrapper img{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.image-text-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.image-text-wrapper .subtitle {
+    color: lightseagreen;
+    font-weight: 1000;
+}
+
+/* About page styles */
+
+.profile-content-wrapper {
+    padding: 8px;
+}
+
+.profile-content-wrapper h1 {
+    color: lightseagreen;
+}
+
+
 }
