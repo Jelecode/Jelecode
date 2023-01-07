@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+    <link rel="icon" href="images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navigation-wrapper">
+            <div class="left-side">
+                <div class="navigation-link-wrapper active-navigation-link">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="navigation-link-wrapper">
+                    <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">My Apps on Google Play</a>
+                </div>
+
+                <div class="navigation-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+
+            <div class="riht-side">
+                <div class="brand">
+                    <div>JELENKO ĐOGATOVIĆ</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="portfolio-items-wrapper">
+                <a href="MyApps.html">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-image-background" style="background-image:url(images/myapps.jpg)"></div>
+                        <div class="image-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/app.png">
+                            </div>
+                            <div class="subtitle">
+                                My published Applications 
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="JavaHome.html">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-image-background" style="background-image:url(images/java.jpg)"></div>
+                        <div class="image-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/java.png">
+                            </div>
+                            <div class="subtitle">
+                                Learn Java and take your skills to a new level 
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="AndroidHome.html">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-image-background" style="background-image:url(images/android.jpg)"></div>
+                        <div class="image-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/android.png">
+                            </div>
+                            <div class="subtitle">
+                                Build for Android in Android Studio
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="HTMLHome.html">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-image-background" style="background-image:url(images/htmlcssjs.jpg)"></div>
+                        <div class="image-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/html.png">
+                            </div>
+                            <div class="subtitle">
+                                Learn web programming with HTML5, CSS3 and JavaScript
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="3DUnity.html">
+                    <div class="portfolio-item-wrapper">
+                        <div class="portfolio-image-background" style="background-image:url(images/unity3d.jpg)"></div>
+                        <div class="image-text-wrapper">
+                            <div class="logo-wrapper">
+                                <img src="images/logos/unity.png">
+                            </div>
+                            <div class="subtitle">
+                                Create 3D games in Unity 
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseover', () => {
+            portfolioItem.childNodes[1].classList.add('image-darken')
+        })
+    })
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseout', () => {
+            portfolioItem.childNodes[1].classList.remove('image-darken')
+        })
+    })
+</script>
+
+</html>
