@@ -122,6 +122,34 @@ body {
     color: lightseagreen;
 }
 
+/* Styles for List pages */
+
+.posts-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px;
+}
+
+.post-link {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    height: 22px;
+}
+.post-link a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.post-link a:hover {
+    color: black;
+}
+
+
+
+
+
 
 
 
@@ -198,6 +226,22 @@ body {
 
 .profile-content-wrapper h1 {
     color: lightseagreen;
+}
+    
+/* Styles for List pages */
+
+.posts-list {
+    padding: 10px;
+}
+
+.post-link {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.post-link a {
+    color: black;
+    text-decoration: none;
 }
 
 
