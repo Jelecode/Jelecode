@@ -240,10 +240,11 @@ body {
 }
 
 .post-link {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
 }
+    
 .post-link a {
     color: black;
     text-decoration: none;
