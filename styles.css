@@ -124,6 +124,11 @@ body {
 
 /* Styles for List pages */
 
+.list-page-wrapper h1{
+    color: lightseagreen;
+    text-align: center;
+}
+
 .posts-list {
     display: grid;
     grid-template-columns: 1fr;
