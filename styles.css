@@ -1,5 +1,3 @@
-/* Styles for big screens */
-
 /* Master styles */
 
 body {
@@ -126,7 +124,8 @@ body {
 
 .list-page-wrapper h2{
     color: lightseagreen;
-    text-align: center;
+    text-align: left;
+    padding: 30px;
 }
 
 .posts-list {
@@ -150,6 +149,8 @@ body {
 .post-link a:hover {
     color: black;
 }
+
+
 
 
 
@@ -232,11 +233,16 @@ body {
 .profile-content-wrapper h1 {
     color: lightseagreen;
 }
-    
+
 /* Styles for List pages */
 
-.posts-list {
+.list-page-wrapper h2{
+    text-align: center;
     padding: 10px;
+}
+
+.posts-list {
+    padding:10px;
 }
 
 .post-link {
@@ -244,7 +250,6 @@ body {
     padding-right: 15px;
     padding-top: 25px;
 }
-    
 .post-link a {
     color: rgb(61, 147, 144);
     text-decoration: none;
@@ -281,20 +286,14 @@ body {
 
 
 
-
-
-
 /* Styles for extra large screen */
 
 @media screen and (min-width: 2300px) {
 
-/* Home styles */
+    /* Home styles */
     
-.portfolio-image-background {
-    height: 550px;
-}
+    .portfolio-image-background {
+        height: 550px;
+    }
     
 }
-
-
-
