@@ -111,9 +111,19 @@ body {
 
 /* About page styles */
 
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+    height: 450px;
+    width: 100%;
+}
+
 .profile-content-wrapper {
-    padding: 30px;
     text-align: center;
+    padding: 30px;
 }
 
 .profile-content-wrapper h1 {
@@ -164,7 +174,7 @@ body {
 
 /* Mobile optimisation */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 780px) {
 
 /* Navigation styles */
 
@@ -226,6 +236,14 @@ body {
 
 /* About page styles */
 
+.two-column-wrapper {
+    grid-template-columns: 1fr;
+}
+
+.profile-image-wrapper img {
+    height: 300px;
+}
+
 .profile-content-wrapper {
     padding: 8px;
 }
@@ -275,6 +293,12 @@ body {
 .portfolio-image-background {
     height: 450px;
 }
+    
+/* About page styles */
+
+.profile-image-wrapper img {
+    height: 600px;
+}
 
 }
 
@@ -292,8 +316,14 @@ body {
 
     /* Home styles */
     
-    .portfolio-image-background {
-        height: 550px;
-    }
+.portfolio-image-background {
+    height: 550px;
+}
+    
+    /* About page styles */
+
+.profile-image-wrapper img {
+    height: 800px;
+}
     
 }
