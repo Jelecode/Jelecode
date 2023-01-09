@@ -252,3 +252,49 @@ body {
 
 
 }
+
+
+
+
+
+
+
+
+
+/* Styles for large screen */
+
+@media screen and (min-width: 1550px) {
+
+/* Home styles */
+
+.portfolio-image-background {
+    height: 450px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles for extra large screen */
+
+@media screen and (min-width: 2300px) {
+
+/* Home styles */
+    
+.portfolio-image-background {
+    height: 550px;
+}
+    
+}
+
+
+
