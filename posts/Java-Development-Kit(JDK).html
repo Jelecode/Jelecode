@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+
+        <div class="post-content">
+
+            <h1>Setting up Java Development Kit (JDK)</h1>
+
+            <p>Java Development Kit is a distribution that consist of an 
+                executable enviroment(virtual machine), an appropriate set of 
+                functionslities and various tools intended for the development 
+                of Java programs.
+            </p>
+
+            <h2>Downloading the JDK</h2>
+
+            <p>OpenJDK can be downloaded from the following address</p>
+
+            <a href="https://jdk.java.net/17/" target="_blank">https://jdk.java.net/17/</a>
+
+            <p>The page at this address has links to download the OpenJDK 
+                variant that corresponds to the operating system oy your 
+                computer.
+            </p>
+
+            <img src="../images/Java/SettingUpJDK/JDK-1.png">
+
+            <p>Under the Builds section you can see links to download the 
+                appropriate version of OpenJDK.
+            </p>
+
+            <p>After downloading, it is necessary to configure the Java enviroment.</p>
+
+            <p>The firste step in configuring the Java enviroment on Windows 
+                operating systems involves unpacking the downloaded archive. 
+                It is recommended creating a folder with the name Java on the primary 
+                partition on your hard disk and unpack the contents of the downloaded 
+                archive inside it. That way you will get the following folder on 
+                your computer C:\Java\jdk-17
+            </p>
+
+            <p>There are several folders on this path, at the moment the most 
+                important is the bin filder.
+            </p>
+
+            <p>Inside the bin folder are all the tools necessary for starting 
+                and developing Java programs, primarily the Java virtual machine 
+                and the Java compiler.
+            </p>
+
+            <p>In order to make these tools easier to use, the path where 
+                the following folders are located will necessary be placed 
+                within certain system variables :
+            </p>
+
+            <p>- the path where the bin folder is located must be placed 
+                inside the Path system variable
+            </p>
+
+            <p>- the path where the complete JDK is located must be placed 
+                inside the JAVA_HOME system variable>
+            </p>
+
+            <h2>Adding the path inside the Path system variable</h2>
+
+            <p>1. Open the Control panel -> Advanced System Settings.</p>
+
+            <img src="../images/Java/SettingUpJDK/JDK-2.png">
+
+            <p>2. At the bottom of the window click on option Enviroment Variables.</p>
+
+            <img src="../images/Java/SettingUpJDK/JDK-3.png">
+
+            <p>3. Find the Path variable and double-click it.</p>
+
+            <img src="../images/Java/SettingUpJDK/JDK-4.png">
+
+            <p>4. In the resulting window, add the path where the bin 
+                folder is located. Confirm by clicking the OK button.
+            </p>
+
+            <h2>Adding the JAVA_HOME system variable</h2>
+
+            <p>1. Inside the Enviroment Variables window, click on the New button</p>
+
+            <img src="../images/Java/SettingUpJDK/JDK-5.png">
+
+            <p>2. In the New System Variable window, it is necessary to enter 
+                the name and value of the new system variable. The name should 
+                ne JAVA_HOME, and the value sould be the path where OpenJDK is located.
+            </p>
+
+            <p>3. Confirm by clicking the ok button.</p>
+
+            <h2>Checking the availability of Java tools</h2>
+
+            <p>In order to be sure that we have completed the previous steps 
+                without error, it is enough to open the console/terminal and enter 
+                the following command :
+            </p>
+
+            <p>java -version</p>
+
+            <img src="../images/Java/SettingUpJDK/JDK-6.png">
+
+            <p>Effect of the command will be the version of the Java enviroment 
+                that exist on the system.
+            </p>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
