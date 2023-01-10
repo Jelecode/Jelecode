@@ -160,6 +160,32 @@ body {
     color: black;
 }
 
+/* Styles for posts pages */
+
+.post-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px;
+}
+
+.post-content {
+    width: 70%;
+    padding-left: 15%;
+}
+
+.post-content h1{
+    color: lightseagreen;
+}
+
+.post-content h2 {
+    color: lightseagreen;
+}
+
+.post-content img {
+    height: 350px;
+    padding: 20px;
+}
+
 
 
 
@@ -273,6 +299,21 @@ body {
     text-decoration: none;
 }
 
+/* Styles for posts pages */
+
+.post-wrapper {
+    padding: 10px;
+}
+
+.post-content {
+    width: 100%;
+    padding: 10px;
+}
+
+.post-content img {
+    height: 200px;
+    padding: 5px;
+}
 
 }
 
@@ -293,11 +334,17 @@ body {
 .portfolio-image-background {
     height: 450px;
 }
-    
+
 /* About page styles */
 
 .profile-image-wrapper img {
     height: 600px;
+}
+
+/* Posts pages styles */
+
+.post-content img {
+    height: 500px;
 }
 
 }
@@ -319,11 +366,17 @@ body {
 .portfolio-image-background {
     height: 550px;
 }
-    
-    /* About page styles */
+
+/* About page styles */
 
 .profile-image-wrapper img {
     height: 800px;
+}
+
+/* Posts pages styles */
+
+.post-content img {
+    height: 600px;
 }
     
 }
