@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>2D Graphics in HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+
+        <div class="post-content">
+
+            <h1>2D Graphics in HTML</h1>
+
+            <p>For displaying graphics within an HTML document, HTML5 
+                has two technologies :
+            </p>
+            <p>
+                <pre>
+    - SVG 
+    - Canvas
+                </pre>
+            </p>
+
+            <h2>SVG</h2>
+
+            <p>Scalable Vector Graphics is an XML based descriptive language 
+                used to create 2D graphics. HTML element used to draw SVG 
+                graphics is : <xmp><svg></svg></xmp> svg- presents a container 
+                for graphic elements.
+            </p>
+
+            <p>The following example illustrates how a rectangle can be drawn 
+                using SVG
+            </p>
+
+            <p>
+                <pre><xmp>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+
+        <svg version="1.1"
+             baseProfile="full"
+             width="300" height="200"
+             xmlns="https://www.w3.org/2000/svg">
+
+             <rect x="10" y="10" 
+             width="200" height="100" 
+             fill="#4D4D4D"
+             stroke="#4F95FF" 
+             stroke-width="3" />
+
+        </svg>
+    </body>
+</html>
+                </xmp></pre>
+            </p>
+
+            <img src="../images/HTML-CSS-JS/2D-Graphics-in-HTML/2D-Graphics-1.png">
+
+            <p>Since the SVG language is an XML derivative, the XML 
+                namespaces is specified within the svg tag using the xmlns 
+                attribute.
+            </p>
+
+            <p>Within the svg element, the height and width of the window 
+                in witch the 2D graphics will be displayed are defined.
+            </p>
+            
+            <p>The SVG language itself defines elements for drawing various 
+                graphic forms. In the example, the rect element is used, 
+                witch draws a rectangle.
+            </p>
+
+            <p>Attributes on the rect element :</p>
+
+            <p>
+                <pre>
+    x - x coordinate of the upper left point
+    y - y coordinate of the upper left point
+    stroke-width - frame line tickness
+    fill - fill color
+    stroke - frame color
+                </pre>
+            </p>
+
+            <p>SVG recognizes the following basics graphic forms :</p>
+
+            <p>
+                <pre>
+    - rectangle (rect)
+    - circle (circle)
+    - ellipse (ellipse)
+    - line (line)
+    - polyline (polyline)
+    - polygon (polygon)
+    - path (path)
+                </pre>
+            </p>
+
+            <h3>Attributes</h3>
+
+            <p>RECTANGLE (rect) :</p>
+
+            <p>
+                <pre>
+    x - x coordinate of the upper left point
+    y - y coordinate of the upper left point
+    width - the width of the rectangle
+    height - the height of the rectangle
+    rx - x radius of the edge of the rectangle
+    ry - y radius of the edge of the rectangle
+                </pre>
+            </p>
+
+            <p>CIRCLE (circle) : </p>
+
+            <p>
+                <pre>
+    r - radius of the circle
+    cx - x coordinate of the center of circle
+    cy - y coordinate of the center of circle
+                </pre>
+            </p>
+
+            <p>ELLIPSE (ellipse) : </p>
+
+            <p>
+                <pre>
+    rx - x radius of the ellipse
+    ry - y radius of the ellipse
+    cx - x coordinate of the center of ellipse
+    cy - y coordinate of the center of ellipse
+                </pre>
+            </p>
+
+            <p>LINE (line) : </p>
+
+            <p>
+                <pre>
+    x1 - x coordinate of the starting point
+    y1 - y coordinate of the starting point
+    x2 - x coordinate of the end point
+    y2 - y coordinate of the end point
+                </pre>
+            </p>
+
+            <p>POLYLINE (polyline) : </p>
+
+            <p>
+                <pre>
+    points - array of comma-separated points,
+            defined by x and y coordinates
+                </pre>
+            </p>
+
+            <p>Example : </p>
+
+            <p>
+                <pre><xmp>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+                    
+        <svg version="1.1"
+            baseProfile="full"
+            width="300" height="200"
+            xmlns="https://www.w3.org/2000/svg">
+                    
+                <polyline 
+                  points="30 55,60 25,100 65,140 20"
+                  fill="none"
+                  stroke="#4F95FF" 
+                  stroke-width="3" />
+                    
+        </svg>
+    </body>
+</html>
+                </xmp></pre>
+            </p>
+
+            <img src="../images/HTML-CSS-JS/2D-Graphics-in-HTML/2D-Graphics-2.png">
+
+            <p>POLYGON (polygon) : </p>
+
+            <p>
+                <pre>
+    points - array of comma-separated points,
+            defined by x and y coordinates
+                </pre>
+            </p>
+
+            <p>Example : </p>
+
+            <pre><xmp>
+    <polygon 
+        points="20 65,60 5,100 65"
+        stroke-width="3"
+        stroke="#4F95FF"
+        fill="#4D4D4D" />
+            </xmp></pre>
+
+            <img src="../images/HTML-CSS-JS/2D-Graphics-in-HTML/2D-Graphics-3.png">
+
+            <p>PATH (path) : </p>
+
+            <p>
+                <pre>
+    d - array of comma-separated points,
+            defined by x and y coordinates
+                </pre>
+            </p>
+
+            <p>Example : </p>
+
+            <p>
+                <pre><xmp>
+    <path 
+        d="M10 10 C 20 20,40 20,50 10"
+        stroke="#4F95FF"
+        fill="none" />
+                </xmp></pre>
+            </p>
+
+            <img src="../images/HTML-CSS-JS/2D-Graphics-in-HTML/2D-Graphics-4.png">
+
+            <h2>Canvas</h2>
+
+            <p>The Canvas element is used to programmatically draw graphics 
+                using the JavaScript language. The Canvas element is most 
+                often used for drawing animated graphics.
+            </p>
+
+            <p>Canvas is created using element : <xmp><canvas></canvas></xmp></p>
+
+            <p>Example : </p>
+
+            <p>
+                <pre><xmp>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="200" height="200"></canvas>
+
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.fillStyle="red";
+            ctx.arc(95, 50, 40, 0, 2*Math.PI);
+            ctx.fill();
+        </script>
+    </body>
+</html>   
+                </xmp></pre>
+            </p>
+
+            <img src="../images/HTML-CSS-JS/2D-Graphics-in-HTML/2D-Graphics-5.png">
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
