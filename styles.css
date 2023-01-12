@@ -215,9 +215,10 @@ body {
 
 .left-side {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding-bottom: 8px;
 }
+
 
 .navigation-wrapper > .left-side > div {
     margin-bottom: 20px;
@@ -236,8 +237,8 @@ body {
     color: black !important;
 }
 
-.brand {
-    color: transparent;
+.riht-side {
+    display: none;
 }
 
 /* Home styles */
