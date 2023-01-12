@@ -34,11 +34,6 @@ body {
     transition: border-bottom 0.5s;
 }
 
-.navigation-link-wrapper img {
-    width: 20px;
-    height: 20px;
-}
-
 .navigation-link-wrapper a {
     color: #8a8a8a;
     text-decoration: none;
