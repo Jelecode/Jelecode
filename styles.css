@@ -132,6 +132,12 @@ body {
 
 /* Styles for List pages */
 
+.list-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px;
+}
+
 .list-page-wrapper h2{
     color: lightseagreen;
     text-align: left;
@@ -139,9 +145,8 @@ body {
 }
 
 .posts-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 30px;
+    width: 70%;
+    padding-left: 15%;
 }
 
 .post-link {
@@ -151,7 +156,7 @@ body {
     height: 22px;
 }
 .post-link a {
-    color: #515050;
+    color: #757171;
     text-decoration: none;
     transition: color 0.5s;
 }
@@ -280,8 +285,16 @@ body {
 
 /* Styles for List pages */
 
+.list-page-wrapper {
+    padding: 10px;
+}
+
+.posts-list {
+    width: 100%;
+    padding: 5px;
+}
+
 .list-page-wrapper h2{
-    text-align: center;
     padding: 10px;
 }
 
