@@ -191,6 +191,10 @@ body {
     padding: 20px;
 }
 
+span {
+    color: lightseagreen;
+  }
+
 
 
 
@@ -227,6 +231,8 @@ body {
 
 .navigation-link-wrapper {
     height: 20px;
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
 .active-navigation-link {
