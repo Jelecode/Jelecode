@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Operators in the Java programming language</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+
+<body>
+
+    <div class="post-wrapper">
+        
+        <div class="navigation-wrapper">
+            <div class="left-side">
+
+                <div class="navigation-link-wrapper">
+                    <a href="../JavaHome.html">
+                        <img src="../images/back_button.png" width="20px" height="20px">
+                    </a>
+                </div>
+
+                <div class="navigation-link-wrapper">
+                    <a href="../index.html">Home</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+
+            <h1>Operators in the Java programming language</h1>
+
+            <p>Operators are special lexical elements of the language, 
+                which enable the execution of the operations on values.
+            </p>
+
+            <p>Operators in the Java language: </p>
+
+            <p><pre>
+    - arithmetic operators
+    - assignment operators 
+    - comparison operators
+    - logical operators
+            </pre></p>
+
+            <h2>Arithmetic operators</h2>
+
+            <p><pre>
+    + addition
+    - subtraction
+    * multiplication
+    / division
+    % modulo (remainder on division)
+
+            </pre></p>
+
+            <p>Example :</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+
+        int x = 10;
+        int y = 5;
+        int modulo = 10%3;  //10 = 3*3+1
+    
+        System.out.println(x+y);
+        System.out.println(x-y);
+        System.out.println(x*y);
+        System.out.println(x/y);
+        System.out.println(modulo); 
+
+    }
+
+}
+
+Exit : 
+
+    15
+    5
+    50
+    2
+    1
+
+            </pre></p>
+
+            <h2>Increment and decrement operators</h2>
+
+            <p><pre>
+    ++ increment operator (increment by one)
+    -- decrement operator (decrement by one)
+            </pre></p>
+
+            <p>Example :</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+                
+        int x = 10;
+        x++;
+
+        Sysstem.out.println(x);
+                
+    }
+                
+}
+                
+Exit : 11
+
+            </pre></p>
+
+            <h2>Assignment operators</h2>
+
+            <p><pre>
+    = assigns the value on the right to the variable on the left 
+
+    += increments the value of the variable on the left by the value 
+    on the right and assigns the resulting value to the variable on
+    the left
+
+    -= substracts the value of the variable on the left by the value 
+    on the right and assigns the resulting value to the variable on
+    the left
+
+    *= multiplies the value of the variable on the left by the value 
+    on the right and assigns the resulting value to the variable on
+    the left
+
+    /= devides the value of the variable on the left by the value 
+    on the right and assigns the resulting value to the variable on
+    the left
+
+    %= calculates the remainder of deviding the value of the variable 
+    on the left by the value on the right and assigns the resulting 
+    remainder to the variable on the left
+
+            </pre></p>
+
+            <p>Example :</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+                                
+        int x = 10;
+        x += 5;
+                
+        Sysstem.out.println(x);
+                                
+    }
+                                
+}
+                                
+Exit : 15
+
+            </pre></p>
+
+            <h2>Comparison operators</h2>
+
+            <p><pre>
+    == equal to 
+    != is not equal
+    < it is less
+    > it is bigger 
+    >= greater than or qual to
+    <= less then or equal to
+
+            </pre></p>
+
+            <p>Example :</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+        
+        int x = 1;
+        int y = 2;
+
+        System.out.println(x == y);
+                                                
+    }
+                                                
+}
+                                                
+Exit : false
+
+            </pre></p>
+
+            <h2>Logical operators</h2>
+
+            <p><pre>
+    && - AND:
+        (20>3 && 5>2)   true
+
+Analysis of the AND operator :
+
+true && true = true
+false && true = false
+true && false = false
+false && false = false
+
+    || - OR:
+        (10<4 || 3>4)   true
+
+Analysis of the OR operator :
+
+true || true = true
+false || true = true
+true || false = true
+false || false = false
+
+    !  - NOT:
+        !(6==6)     false
+
+Analysis of the NOT operator :
+
+!true = false
+!false = true
+
+            </pre></p>
+
+            <h2>Ternary operator</h2>
+
+            <p><pre>
+    variable = (condition) ? value1 : value2;
+            </pre></p>
+
+            <p>Meaning og the giving syntax : If the condition is met, 
+                assign the value1 to the variable, and if the condition 
+                is not met, assign the value2 to the variable.
+            </p>
+
+            <p>Example :</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+        
+        int age = 14;
+
+        String message = (age < 18) ? "You are underage!" : "Welcome to the site" ;
+
+        System.out.println(message);
+                                                                
+    }
+                                                                
+}
+                                                                
+Exit : You are underage!
+
+            </pre></p>
+
+            <h2>Concatenation of strings</h2>
+
+            <p>Arithmetic operator for addition ( + ) in the Java language 
+                has another function - addition or concatenation of strings.
+            </p>
+
+            <p>Example :</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+
+        String value1 = "Hello"
+        String value2 = "World"
+
+        System.out.println(value1 + value2);
+                                                                               
+    }
+                                                                                
+} 
+
+Exit : HelloWorld
+
+            </pre></p>
+
+            <p>You can also add text to an existing string</p>
+
+            <p><pre>
+public class Main {
+
+    public static void main (String [] args) {
+                
+        String value1 = "Hello"
+                
+        System.out.println(value1 + " World!");
+                                                                                               
+    }
+                                                                                                
+} 
+                
+Exit : Hello World!
+
+            </pre></p>
+
+        </div>
+
+    </div>
+</body>
+</html>
