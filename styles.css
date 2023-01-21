@@ -152,7 +152,8 @@ body {
 .post-link {
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     height: 22px;
 }
 .post-link a {
@@ -309,7 +310,8 @@ body {
 .post-link {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .post-link a {
     color: rgb(61, 147, 144);
