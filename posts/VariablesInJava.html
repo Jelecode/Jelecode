@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Variables in the Java programming language</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+        
+        <div class="navigation-wrapper">
+            <div class="left-side">
+
+                <div class="navigation-link-wrapper">
+                    <a href="../JavaHome.html">
+                        <img src="../images/back_button.png" width="20px" height="20px">
+                    </a>
+                </div>
+
+                <div class="navigation-link-wrapper">
+                    <a href="../index.html">Home</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+
+            <h1>Variables in the Java programming language</h1>
+
+            <p>Variables are containers in which values are stored. 
+                A single variable during Java program execution can 
+                have different values and that is why it is called a variable. 
+                That means that the value of one variable can be changed at any moment.
+            </p>
+
+            <img src="../images/Java/VariablesInJava/variablesJava0.png">
+
+            <p>It is possible to change the value of a variable any number 
+                of times, as long as its type is respected.
+            </p>
+
+            <p><pre>
+    String message = "Helo World";
+    message = 33;
+            </pre></p>
+
+            <p>This code is incorrect and produces an error because a String 
+                variable cannot accept an int data.
+            </p>
+
+            <p>The variable consist of at least :</p>
+
+            <p>- the data type that the variable will be able 
+                to accept
+            </p>
+
+            <p>- an identifier representing the name of the variable</p>
+
+            <h2>Declaration and initialization</h2>
+
+            <p>Declaration of a variable is the process of its 
+                creation. Assigning a data type and name to a variable.
+            </p>
+
+            <img src="../images/Java/VariablesInJava/variablesJava1.png">
+
+            <p><pre>
+    String - data type
+    message - identifier
+            </pre></p>
+
+            <p>Initialization is the process of assigning a value to a variable</p>
+
+            <img src="../images/Java/VariablesInJava/variablesJava2.png">
+
+            <p>Declaration and initialization can be done separately or 
+                in one command :
+            </p>
+
+            <p><pre>
+    String message = "How are you?";
+            </pre></p>
+
+            <h2>Variable naming</h2>
+
+            <p>- the variable name can be composed of letters, numbers, and 
+                the underscore and dollar characters
+            </p>
+            <p> - the variable name must have at least one character</p>
+            <p> - a variable name must not start with a number</p>
+            <p> - the variable name is case sensitiv</p>
+            <p> - the variable name must not contain spaces</p>
+            <p> - Java keywords cannot be used as a variable name</p>
+
+            <p><pre>
+
+
+            </pre></p>
+
+            <p>Good variable naming practice : </p>
+
+            <p><pre>
+String userName;
+
+int userNumber;
+
+float birthYear;
+
+doouble firstOperand;
+
+            </pre></p>
+
+            <h2>Variables without an explicitly defined type</h2>
+
+            <p>To create a variable without explicitly defining its type, 
+                the keyword ( var ) is used.
+            </p>
+
+            <p><pre>
+var name = "Marco";
+            </pre></p>
+
+            <p>A variable without an explicitly defined type must be 
+                declared and initialized in a single statment.
+            </p>
+
+            <img src="../images/Java/VariablesInJava/variablesJava3.png">
+
+            <p>Since the Java compiler relies on values to guess the type of a 
+                variable, using the word var in uninitialized statements is not 
+                possible because the compiler cannot guess which data type it belongs to.
+            </p>
+
+        </div>
+
+    </div>
+</body>
+</html>
