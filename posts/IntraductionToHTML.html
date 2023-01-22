@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Intraduction to HTML</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+        
+        <div class="navigation-wrapper">
+            <div class="left-side">
+
+                <div class="navigation-link-wrapper">
+                    <a href="../HTMLHome.html">
+                        <img src="../images/back_button.png" width="20px" height="20px">
+                    </a>
+                </div>
+
+                <div class="navigation-link-wrapper">
+                    <a href="../index.html">Home</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+
+            <h1>Intraduction to HTML</h1>
+
+            <p>One HTML document can contain text, presented in various 
+                forms, but also images, videos, sounds, graphs, links, 
+                2D graphics and animation. In order to porperly define 
+                desired content of an HTML document, it is necessary to know 
+                the rules that dictate the HTML language.
+            </p>
+
+            <p>HTML is used to define the structure of an HTML document. 
+                To perform such work, HTML has a large number of different 
+                tags, which are used to define sections of the HTML document.
+            </p>
+
+            <p>A simple HTML page can have the following structure :</p>
+
+            <p><pre><xmp>
+<!DOCTYPE html>
+<html>
+<head>       
+    <title>This is title</title>         
+</head>
+                
+<body>
+    <h1>This is a heading</h1>
+    <p>This is first paragraph</p>
+    <p>This is second paragraph</p>
+</body>
+</html>
+            </xmp></pre></p>
+
+            <p>If this code is saved in an text document with the extension .html ,
+                and opened in a web browser, it will be displayed as in the picture.
+            </p>
+
+            <img src="../images/HTML-CSS-JS/IntraductionToHTML/IntraductionToHTML_1.png">
+
+            <p>By analyzing the image, it can be concluded that the tag title
+                refers to the name of the document, tag h1 to the heading, 
+                and tag p to the paragraphs in the document.
+            </p>
+            <p>Finally, it can be concluded that the elements, tags and attributes 
+                are the basic building blocks of an HTML document.
+            </p>
+
+            <h2>Elements and tags</h2>
+
+            <p>The HTML document has 3 different types of tags :</p>
+
+            <p>- opening tags</p>
+
+            <p>- closing tags</p>
+
+            <p>- self-closing tags</p>
+            
+            <p>An example of an HTML tag is : </p>
+
+            <p><pre><xmp>
+<h1>
+            </xmp></pre></p>
+
+            <p>Also one HTML tag is :</p>
+
+            <p><pre><xmp>
+</h1>
+            </xmp></pre></p>
+
+            <p>A certain difference can be observed between the two shown tags. 
+                The second tag contains a slash character in front of its name, which 
+                means that it is a closing tag, the first tag without a slash character 
+                is an opening tag.
+            </p>
+
+            <p>In addition to opening and closing tags, HTML has a special 
+                type of tags called self-closing tags. These are tags that 
+                start and end in the same time. An example of a self-closing 
+                tag :
+            </p>
+
+            <p><pre><xmp>
+<br />
+            </xmp></pre></p>
+
+            <p>A self-closing tag has a slash character at the end of the tag 
+                name, which must be separated from the tag name by a blank space.
+            </p>
+
+            <p>The described HTML tags are used to build an HTML element. The element 
+                starts with an opening tag and ends with a closing tag. For example, a 
+                heading is an HTML element :
+            </p>
+
+            <p><pre><xmp>
+<h1>This is heading</h1>
+            </xmp></pre></p>
+
+            <h2>Element attributes</h2>
+
+            <p>Every HTML element can contain attributes. Attributes provide 
+                additional informations about HTML elements, and they are always 
+                defined on the element's opening tag. Attributes usually occur 
+                as a key-value pairs, where the name of the attribute is key.
+            </p>
+
+            <p><pre><xmp>
+<h1 id="first_heading">This is heading</h1>
+            </xmp></pre></p>
+
+            <h2>Global HTML attributes</h2>
+
+            <p>Different HTML elements have a different set of attributes 
+                that can be defined on them. However, certain HTML attributes 
+                can appear on any element.
+            </p>
+
+            <p>Global HTML attributes are :</p>
+
+            <p><pre>
+accesskey  
+
+class
+
+contenteditable
+
+contextmenu
+
+data-* 
+
+dir 
+
+draggable 
+
+dropzone
+
+hidden 
+
+id 
+
+lang 
+
+spellcheck 
+
+style 
+
+tabindex 
+
+title 
+
+translate 
+
+            </pre></p>
+
+            <p>accesskey - defines the keyboard key that adds focus 
+                to the element.
+            </p>
+
+            <p>class - defines one or more element class names.</p>
+
+            <p>contenteditable - defines whether the content of the 
+                element is editable or not.
+            </p>
+
+            <p>contextmenu - defines a context menu that is obitained by 
+                right-clicking on element.
+            </p>
+
+            <p>data-* - defines custom application data.</p>
+
+            <p>dir - defines the direction of writing text inside the 
+                element.
+            </p>
+
+            <p>draggable - defines whether the element can be dragged around the page.</p>
+
+
+            <p>dropzone - defines whether the data will be copied, moved 
+                or linked when released after being dragged.
+            </p>
+
+            <p>hidden - defines an element as invisible.</p>
+
+            <p>id - defines a unique element identifier.</p>
+
+            <p>lang - defines the content language of the element.</p>
+
+            <p>spellcheck - defines whether the content of the element 
+                will be grammatically checked.
+            </p>
+
+            <p>style - defines the inline CSS styling of the 
+                element.
+            </p>
+
+            <p>tabindex - defines the order of elements on the page 
+                when using the tab key to move from element to element.
+            </p>
+
+            <p>title - defines additional informations about the 
+                element.
+            </p>
+
+            <p>translate - defines whether the content of the element 
+                will be translated.
+            </p>
+
+            <h2>HTML document structure</h2>
+
+            <p>HTML pages generally contain certain basic elements. 
+                These are the following elements :
+            </p>
+
+            <p><pre><xmp>
+- <html>
+- <head>
+- <body>
+            </xmp></pre></p>
+
+            <p>The basic structure that every HTML element has is the following :</p>
+
+            <p><pre><xmp>
+<!DOCTYPE html>
+<html>
+<head>       
+             
+</head>            
+<body>
+    
+</body>
+</html>
+            </xmp></pre></p>
+
+            <p>An HTML element begins with a DOCTYPE declaration. This 
+                declaration tells the browser which version af HTML is 
+                used in document.
+            </p>
+
+            <p>After the declaration there is an html element. It is 
+                an element that surrounds all other elements within the document 
+                and indicated that it is HTML code.
+            </p>
+
+            <p>Inside the html element, the first element in the basic structure 
+                is head. Elements that are not directly visible on the page are placed 
+                inside the head element. For example meta tags, links to external CSS 
+                and other files, ...
+            </p>
+
+            <p>The body tag follows immediately after the head tag, and contains 
+                everything that is directly visible on the page.
+            </p>
+
+        </div>
+
+    </div>
+</body>
+</html>
