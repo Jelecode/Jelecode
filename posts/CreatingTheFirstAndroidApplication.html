@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Creating the first Android Application</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="navigation-wrapper">
+                <div class="left-side">
+    
+                    <div class="navigation-link-wrapper">
+                        <a href="../AndroidHome.html">
+                            <img src="../images/back_button.png" width="20px" height="20px">
+                        </a>
+                    </div>
+    
+                    <div class="navigation-link-wrapper">
+                        <a href="../index.html">Home</a>
+                    </div>
+                </div>
+            </div>
+    
+        <div class="post-content">
+
+            <h1>Creating the first Android Application</h1>
+
+            <p>To create an Android App we need the Android Studio 
+                development environment. If you don't have the Android 
+                Studio installed, install it according to the instructions 
+                in the next page :
+            </p>
+
+            <a href="InstallingAndroidStudio.html" target="_blank">Download and install the Android Studio development environment</a>
+
+            <p>The first step is to create a new project within Android 
+                Studio development environment.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_1.png">
+
+            <p>After selecting the option that we want to create a new 
+                project, we get the following display for selecting an activity.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_2.png">
+
+            <p> Activity is a special Java class that every Android Application must have. 
+                This activity manages user interaction and is responsible for creating 
+                a window within which UI controls can be placed. In other words, activity defines 
+                things that the user can do. When creating a new project, Android Studio 
+                allows the selection of a large number of different templates of the Activity 
+                class, in order to enable developers to develop applications of a certain 
+                type as quickly as possible. We're going to create an App from scratch so we 
+                choose Empty Activity.
+            </p>
+
+            <p>By clicking on the Next button, a window is displayed in which we need 
+                to configure the new project.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_3.png">
+
+            <p>The name of the application is defined by the Name field.</p>
+
+            <p>Package name is the name of the package. A package represents a 
+                collection of Java classes and every Android Application must have 
+                at least one package. The package name consists of the application name 
+                and the company domain name. We can set any text for the name of 
+                the company domain, which will be part of the package name, so in the 
+                example of the image, the domain com.jelenko is used.
+            </p>
+
+            <p>The next field is Save location and defines the path where the 
+                project files will be placed, that is, our Android Application files.
+            </p>
+
+            <p>In the language field, it is necessary to select the programming 
+                language that will be used for the development of the application. 
+                Kotlin and Java are available, and Java is selected.
+            </p>
+
+            <p>The next thing to select is the Minimum SDK. It represents the 
+                minimum supported version of the Software Development Kit (SDK). 
+                An SDK is a collection of packages with functionalities used 
+                when developing an application. By choosing a lower API version, we 
+                enable the application to work on older devices and increase the number 
+                of devices on which application can work.
+            </p>
+
+            <p>Finally, clicking the Finish button establishes a new project 
+                within the development environment.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_4.png">
+
+            <p>The previous steps for setting up the Android project 
+                produced the code for a fully functional Android Application.
+            </p>
+
+
+            <h2>Running the first Android App</h2>
+
+            <p>In order to run the Android Application from the development 
+                environment, it is enough to click on the Run App button, or 
+                press the SHIFT + F10 keys on the keyboard.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_5.png">
+
+            <p>The Application can be run on a virtual or real physical device. 
+                Next to Run button for running the Application, the virtual device 
+                on which the Application will be launched is displayed.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_6.png">
+
+            <p>If we click on that drop-down menu, and click on Device Manager, 
+                the Device Manager will open. We are going to create a new virtual device.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_7.png">
+
+            <p>Clicking on the Create Device button opens a window for 
+                configuring a new virtual device.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_8.png">
+
+            <p>Android Studio allows the creation of virtual devices of different types.</p>
+
+            <p>We have selected the Phone Category and the Pixel device.</p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_9.png">
+
+            <p>The next device configuration page provides options related to the operating 
+                system of that device.
+            </p>
+
+            <p>At this point, we need to check download next to the R name so 
+                that we can use the latest version of the operating system. 
+                After downloading, there will no longer be a download option 
+                next to the R name. Then select R and click on Next button.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_10.png">
+
+            <p>In this window, we need to set the name of the device, 
+                the orientation of the screen and by clicking the Finish 
+                button we create our virtual device.
+            </p>
+
+            <img src="..//images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_11.png">
+
+            <p>Now that we have a virtual device, to run the Application 
+                it is enough to select the device and by clicking the Run button the 
+                Application will be launched.
+            </p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_12.png">
+
+            <p>After starting the virtual device, our first Application will run on it.</p>
+
+            <img src="../images/Android/CreatingTheFirstAndroidApplication/CreatingTheFirstAndroidApp_13.png">
+
+            <p>The only functionality of this Application is to display
+                 a welcome message "Hello World".
+            </p>
+
+        </div>
+
+    </div>
+</body>
+</html>
