@@ -10,6 +10,8 @@ body {
     grid-template-columns: 1fr;
 }
 
+
+
 /* Navigation styles */
 
 .navigation-wrapper {
@@ -128,16 +130,12 @@ body {
     filter: brightness(10%);
 }
 
-/* About page styles */
-
-.two-column-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+/* About and Contact page styles */
 
 .profile-image-wrapper img {
-    height: 450px;
+    height: 400px;
     width: 100%;
+    
 }
 
 .profile-content-wrapper {
@@ -146,6 +144,24 @@ body {
 }
 
 .profile-content-wrapper h1 {
+    color: lightseagreen;
+}
+
+.profile-link-wrapper{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 22px;
+}
+
+.profile-link-wrapper a {
+    color: #757171;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.profile-link-wrapper a:hover {
     color: lightseagreen;
 }
 
@@ -303,7 +319,7 @@ body {
 }
 
 .profile-image-wrapper img {
-    height: 300px;
+    height: 180px;
 }
 
 .profile-content-wrapper {
@@ -382,7 +398,7 @@ body {
 /* About page styles */
 
 .profile-image-wrapper img {
-    height: 600px;
+    height: 800px;
 }
 
 /* Posts pages styles */
@@ -414,7 +430,7 @@ body {
 /* About page styles */
 
 .profile-image-wrapper img {
-    height: 800px;
+    height: 1000px;
 }
 
 /* Posts pages styles */
