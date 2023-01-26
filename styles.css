@@ -208,11 +208,14 @@ body {
     grid-template-columns: 1fr;
 }
 
+
 .post-content {
-    width: 60%;
+    width: 70%;
     padding-left: 50px;
+    padding-right: 50px;
     padding-top: 50px;
 }
+
 
 .post-content h1{
     color: lightseagreen;
@@ -329,6 +332,19 @@ body {
 .profile-content-wrapper h1 {
     color: lightseagreen;
 }
+
+.profile-link-wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profile-link-wrapper a {
+    color: lightseagreen;
+    text-decoration: none;
+}
+
 
 /* Styles for List pages */
 
