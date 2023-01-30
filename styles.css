@@ -133,6 +133,8 @@ body {
     filter: brightness(10%);
 }
 
+
+
 /* About and Contact page styles */
 
 .profile-image-wrapper img {
@@ -225,7 +227,6 @@ body {
 
 
 .post-content {
-    width: 70%;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 50px;
@@ -372,9 +373,6 @@ body {
 
 
 /* Styles for posts pages */
-.post-wrapper{
-    width: 100%;
-}
 
 .post-content {
     padding: 10px;
