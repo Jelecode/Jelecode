@@ -6,8 +6,8 @@ body {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
+   display: grid;
+   grid-template-columns: 1fr;
 }
 
 
@@ -23,7 +23,7 @@ body {
     padding-bottom: 16px;
     position: sticky;
     top: 0;
-    background: rgb(252, 242, 254);
+    background: rgb(39, 39, 39);
 }
 
 
@@ -35,18 +35,19 @@ body {
     margin-right: 20px;
     font-size: 0.9em;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 
 .navigation-wrapper > .left-side > div a{
     position: relative;
-    font-weight: 900;
+    font-weight: 1900;
     text-transform: uppercase;
     text-decoration: none;
-    color:rgb(52, 42, 54);
+    color:rgb(255, 255, 255);
     font-size: 1.2em;
     letter-spacing: 2px;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .navigation-link-wrapper {
@@ -56,25 +57,25 @@ body {
 }
 
 .navigation-link-wrapper a {
-    color: #8a8a8a;
+    color: #a9a9a9;
     text-decoration: none;
     transition: color 0.5s;
 }
 
 .navigation-link-wrapper:hover {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .navigation-link-wrapper a:hover {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .active-navigation-link {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .active-navigation-link a {
-    color: black !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 /* Home styles */
@@ -122,7 +123,7 @@ body {
 
 .image-text-wrapper:hover .subtitle {
     font-weight: 1000;
-    color: lightseagreen;
+    color: #4facfe;
 }
 
 .image-darken {
@@ -144,7 +145,7 @@ body {
 }
 
 .profile-content-wrapper h1 {
-    color: lightseagreen;
+    color: #4facfe;
 }
 
 .profile-link-wrapper{
@@ -162,44 +163,59 @@ body {
 }
 
 .profile-link-wrapper a:hover {
-    color: lightseagreen;
+    color: #4facfe;
 }
 
 /* Styles for List pages */
 
-.list-page-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 30px;
+.content-wrapper {
+    width: 100%;
 }
 
-.list-page-wrapper h2{
-    color: lightseagreen;
-    text-align: left;
+.list-page-wrapper {
     padding: 30px;
+    background-color: #fefefe;
 }
 
 .posts-list {
-    width: 70%;
-    padding-left: 15%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
 }
 
-.post-link {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 22px;
+.post {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+    border-radius: 18px;
+    margin: 10px;
+
 }
-.post-link a {
-    color: #757171;
+
+.post_title {
+    color: #4facfe;
+}
+
+.post_text {
+    margin-bottom: 5px;
+    color: #000000b3;
+}
+
+.post_cta {
+    display: inline-block;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffff;
+    border-radius: 8px;
     text-decoration: none;
-    transition: color 0.5s;
+    background: linear-gradient(to right, #c945cf 0%, #04a6bd 100%);
 }
 
-.post-link a:hover {
-    color: black;
+.post_cta:hover {
+    background: linear-gradient(to right, #04a6bd 0%, #c945cf 100%);
 }
+
 
 /* Styles for posts pages */
 
@@ -218,11 +234,11 @@ body {
 
 
 .post-content h1{
-    color: lightseagreen;
+    color: #4facfe;
 }
 
 .post-content h2 {
-    color: lightseagreen;
+    color: #4facfe;
 }
 
 .post-content img {
@@ -253,13 +269,11 @@ body {
     padding: 8px;
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
 }
 
 .right-side {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
 }
 
 
@@ -285,10 +299,6 @@ body {
     border-bottom: transparent;
 }
 
-.active-navigation-link a {
-    color: black !important;
-}
-
 
 /* Home styles */
 
@@ -311,7 +321,7 @@ body {
 }
 
 .image-text-wrapper .subtitle {
-    color: lightseagreen;
+    color: #4facfe;
     font-weight: 1000;
 }
 
@@ -330,7 +340,7 @@ body {
 }
 
 .profile-content-wrapper h1 {
-    color: lightseagreen;
+    color: #4facfe;
 }
 
 .profile-link-wrapper{
@@ -348,33 +358,19 @@ body {
 
 /* Styles for List pages */
 
+.content-wrapper {
+    width: 100%;
+}
+
 .list-page-wrapper {
     padding: 10px;
 }
 
 .posts-list {
-    width: 100%;
-    padding: 5px;
+    padding: 15px;
+    grid-template-columns: 1fr;
 }
 
-.list-page-wrapper h2{
-    padding: 10px;
-}
-
-.posts-list {
-    padding:10px;
-}
-
-.post-link {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.post-link a {
-    color: rgb(61, 147, 144);
-    text-decoration: none;
-}
 
 /* Styles for posts pages */
 .post-wrapper{
@@ -382,7 +378,6 @@ body {
 }
 
 .post-content {
-    width: 100%;
     padding: 10px;
 }
 
@@ -415,6 +410,16 @@ body {
 
 .profile-image-wrapper img {
     height: 800px;
+}
+
+/* Styles for List pages */
+
+.list-page-wrapper {
+    padding: 50px;
+}
+
+.posts-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 /* Posts pages styles */
