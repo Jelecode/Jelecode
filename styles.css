@@ -3,11 +3,13 @@
 body {
     margin: 0px;
     font-family: 'Rubik', sans-serif
+    
 }
 
 .container {
    display: grid;
    grid-template-columns: 1fr;
+   width: 100%;
 }
 
 
@@ -168,10 +170,6 @@ body {
 
 /* Styles for List pages */
 
-.content-wrapper {
-    width: 100%;
-}
-
 .list-page-wrapper {
     padding: 30px;
     background-color: #fefefe;
@@ -222,6 +220,7 @@ body {
 .post-wrapper {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
 }
 
 
