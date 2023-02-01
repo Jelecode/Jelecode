@@ -40,15 +40,23 @@
 
     <div class="container">
 
-        <div class="contact_box">
+        <div class="two_columns_contact_page">
+            <div class="contact_box">
+                <form action="https://formspree.io/f/xeqwevkr" method="POST">
+                    <label>   
+                        <input type="email" name="email" class="email_textbox" placeholder="Your Email">
+                    </label>
+                    <label>   
+                        <textarea name="message" class="message_textbox" placeholder="Your Message"></textarea>
+                    </label>
+                    <button type="submit" class="submit_button">Send Message</button>
+                </form>
 
-            <form action="https://formspree.io/f/xeqwevkr" method="POST">
-                <input type="text" class="input_field" placeholder="Your Name">
-                <input type="email" class="input_field" placeholder="Your Email">
-                <input type="subject" class="input_field" placeholder="Subject">
-                <textarea type="text" class="input_field_textarea" placeholder="Message"></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            </div>
+
+            <div class="contact_informations">
+
+            </div>
 
         </div>
     

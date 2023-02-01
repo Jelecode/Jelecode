@@ -172,46 +172,59 @@ body {
 
 /* Contact page styles */
 
+.two_columns_contact_page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+}
+
 .contact_box {
-    width: 500px;
+    width: 395px;
+    height: 440px;
+    border: solid #757171;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 20px 0 #999;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: relative;
+    align-items: center;
+    padding: 10px;
 }
 
 form {
-    margin: 35px;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
 }
 
-.input_field {
-    width: 400px;
-    height: 40px;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+.email_textbox {
     border: 1px solid #777;
+    margin-bottom: 10px;
     border-radius: 14px;
+    box-shadow: 0 0 20px 0 #999;
+    width: 360px;
+    height: 36px;
+    padding-left: 10px;
     outline: none;
 }
 
-.input_field_textarea {
-    width: 400px;
-    height: 150px;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+.message_textbox {
     border: 1px solid #777;
+    margin-bottom: 10px;
     border-radius: 14px;
+    box-shadow: 0 0 20px 0 #999;
+    width: 360px;
+    height: 290px;
+    padding-left: 10px;
+    padding-top: 20px;
     outline: none;
 }
 
-.btn {
+.submit_button {
     border-radius: 20px;
+    width: 140px;
     color: #fff;
-    margin-top: 18px;
+    margin-top: 8px;
     padding: 10px;
     background-color: #47c35a;
     font-size: 12px;
@@ -404,6 +417,51 @@ form {
     text-decoration: none;
 }
 
+/* Contact page styles */
+
+.two_columns_contact_page {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+}
+
+.contact_box {
+    width: 320px;
+    height: 304px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+form {
+    padding: 10px;
+}
+
+.email_textbox {
+    margin-bottom: 5px;
+    border-radius: 7px;
+    width: 290px;
+    height: 18px;
+    padding-left: 5px;
+}
+
+.message_textbox {
+    margin-bottom: 5px;
+    border-radius: 7px;
+    width: 290px;
+    height: 210px;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.submit_button {
+    border-radius: 10px;
+    width: 100px;
+    margin-top: 4px;
+    padding: 5px;
+    font-size: 10px;
+}
 
 /* Styles for List pages */
 
@@ -456,6 +514,50 @@ form {
 
 .profile-image-wrapper img {
     height: 800px;
+}
+
+/* Contact page styles */
+
+.two_columns_contact_page {
+    padding: 40px;
+}
+
+.contact_box {
+    width: 790px;
+    height: 880px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+form {
+    padding: 20px;
+}
+
+.email_textbox {
+    margin-bottom: 20px;
+    border-radius: 28px;
+    width: 720px;
+    height: 72px;
+    padding-left: 20px;
+}
+
+.message_textbox {
+    margin-bottom: 20px;
+    border-radius: 28px;
+    width: 720px;
+    height: 580px;
+    padding-left: 20px;
+    padding-top: 40px;
+}
+
+.submit_button {
+    border-radius: 40px;
+    width: 280px;
+    margin-top: 16px;
+    padding: 20px;
+    font-size: 24px;
 }
 
 /* Styles for List pages */
