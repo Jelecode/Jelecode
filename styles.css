@@ -135,7 +135,7 @@ body {
 
 
 
-/* About and Contact page styles */
+/* About page styles */
 
 .profile-image-wrapper img {
     height: 400px;
@@ -168,6 +168,55 @@ body {
 
 .profile-link-wrapper a:hover {
     color: #4facfe;
+}
+
+/* Contact page styles */
+
+.contact_box {
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 0 #999;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+}
+
+form {
+    margin: 35px;
+}
+
+.input_field {
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+}
+
+.input_field_textarea {
+    width: 400px;
+    height: 150px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+}
+
+.btn {
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 18px;
+    padding: 10px;
+    background-color: #47c35a;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Styles for List pages */
