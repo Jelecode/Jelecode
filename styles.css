@@ -309,6 +309,17 @@ form {
 }
 
 
+.video_link a {
+    color: #757171;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.video_link a:hover {
+    color: #4facfe;
+}
+
+
 
 
 
@@ -323,7 +334,7 @@ form {
 
 /* Mobile optimisation */
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 700px) {
 
 /* Navigation styles */
 
@@ -488,6 +499,11 @@ form {
 .post-content img {
     height: 200px;
     padding: 5px;
+}
+
+.video_link a {
+    color: lightseagreen;
+    text-decoration: none;
 }
 
 }
