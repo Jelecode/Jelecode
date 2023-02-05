@@ -321,11 +321,11 @@ form {
 
 .contact_informations {
     padding-top: 10%;
-    padding-left: 15%;
+    padding-left: 10%;
 }
 
 .youtube_button {
-    margin-bottom: 1%;
+    margin-bottom: 10%;
     padding-left: 1%;
 }
 
@@ -514,10 +514,6 @@ form {
 .video_link a {
     color: lightseagreen;
     text-decoration: none;
-}
-
-.youtube_button {
-    margin-bottom: 6%;
 }
 
 }
