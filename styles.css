@@ -232,6 +232,16 @@ form {
     cursor: pointer;
 }
 
+.contact_informations {
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.youtube_button {
+    margin-bottom: 10%;
+    padding-left: 1%;
+}
+
 /* Styles for List pages */
 
 .list-page-wrapper {
@@ -319,15 +329,7 @@ form {
     color: #4facfe;
 }
 
-.contact_informations {
-    padding-top: 10%;
-    padding-left: 10%;
-}
 
-.youtube_button {
-    margin-bottom: 10%;
-    padding-left: 1%;
-}
 
 
 
