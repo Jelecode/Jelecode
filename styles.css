@@ -322,6 +322,8 @@ form {
 .contact_informations {
     padding-top: 15%;
     padding-left: 15%;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 
