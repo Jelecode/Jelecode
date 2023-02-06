@@ -294,7 +294,7 @@ form {
 .post-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
+    width: 60%;
 }
 
 
@@ -328,6 +328,85 @@ form {
 .video_link a:hover {
     color: #4facfe;
 }
+
+/* Footer Styles */
+
+.footer {
+    width: 100%;
+    padding: 50px 0px;
+    background: #333;
+    color: #efefef;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer div {
+    text-align: center;
+
+}
+
+.footer div h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.col1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.col1 a {
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #a9a9a9;
+    transition: color 0.5s;
+}
+
+.col1 a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.form_subscribe input {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 150%;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+.form_subscribe button {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
+}
+
+.col3 {
+    margin-top: 20px;
+}
+
+.col3 a {
+    font-weight: 1900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+
+
+
 
 
 
@@ -504,6 +583,12 @@ form {
 
 /* Styles for posts pages */
 
+.post-wrapper {
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
 .post-content {
     padding: 10px;
 }
@@ -516,6 +601,18 @@ form {
 .video_link a {
     color: lightseagreen;
     text-decoration: none;
+}
+
+/* Footer Styles */
+
+.footer {
+    padding: 40px 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.col1 a {
+    color: rgb(255, 255, 255);
 }
 
 }
