@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Android Manifest File</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="post-content">
+ 
+            <h1>Android Manifest File</h1>
+
+            <p>AndroidManifest.xml is a file without which no Android Application 
+                is able to function.
+            </p>
+
+            <p>An Android application consists of many loosely coupled components, i.e. 
+                different activities, services, intents,.. All these components are united 
+                by a AndroidManifest.xml file in order to form a functional Android application. 
+                That's why it can be said that the AndroidManifest.xml file is the most important 
+                file of every Android application, which describes it in detail.
+            </p>
+
+            <p>After building the application, this file becomes an integral part of a root folder 
+                of the .apk archive.
+            </p>
+
+            <p>After installing the application on the device, the operating system first 
+                reads the content of this file, and based on the informations inside it, it learns 
+                the characteristics of the installed package.
+            </p>
+
+            <h3>The most important roles of the Manifest file :</h3>
+
+            <p>- defining the name of the Java package of the application</p>
+
+            <p>- description of all application components</p>
+
+            <p>- defining the process that hosts the application</p>
+
+            <p>- defining permissions that must be provided by the application in 
+                order to access sensitive parts of the API
+            </p>
+
+            <p>- defining the minimum version of the Android API that the application 
+                requires for its execution
+            </p>
+
+            <p>- defining the external libraires used by the application.</p>
+
+            <h2>Manifest file structure</h2>
+
+            <p>The very simple content of the XML format is hidden behind the very 
+                serious functionality of the AndroidManifest.xml file. And the Manifest file 
+                is inside the app/src/main filder.
+            </p>
+
+            <img src="../images/Android/AndroidManifestFile/AndroidManifest1.png">
+
+            <p>The content of the Manifest file in the example of the first "Hello World" Android 
+                Application is as follows:
+            </p>
+
+            <p style="font-size: small;"><pre><xmp>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jelenko.firstandroidapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstAndroidApp">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+            </xmp></pre></p>
+
+            <p>A Manifest file is made up of content in XML format. Therefor, this documentv
+                begins with a classic XML declaration:
+            </p>
+
+            <p><pre><xmp>
+<?xml version="1.0" encoding="utf-8"?>
+            </xmp></pre></p>
+
+            <p>The declaration defines the version of the used XML language and 
+                the encoding type.
+            </p>
+
+            <p>The root element of the AndroidManifest.xml file is the manifest 
+                element:
+            </p>
+
+            <p><pre><xmp>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jelenko.firstandroidapp">
+    .... 
+</manifest>
+            </xmp></pre></p>
+
+            <p>It is necessary to define the xmlns:android and package attributes on the 
+                manifest element.
+            </p>
+
+            <p>The xmlns:android attribute defines the Android XML namespaces. 
+                The value of this attribute must always be :
+            </p>
+
+            <p><pre><xmp>
+http://schemas.android.com/apk/res/android
+            </xmp></pre></p>
+
+            <p>The package attribute defines the name of the Java package in which the program code of the Java 
+                application is located. It is the most ordinary Java package whose name 
+                must be unique. 
+                The package name serves as the unique identifier of the application on the 
+                Android system. 
+                When the package name is changed, the Android operating system sees the 
+                application as completely new.
+            </p>
+
+            <h3>Application element</h3>
+
+            <p>The manifest element must directly contain the application element </p>
+
+            <p><pre><xmp>
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.FirstAndroidApp">
+    <activity
+        android:name=".MainActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+            </xmp></pre></p>
+
+            <p>The application element represents an application declaration. This 
+                element contains sub-elements that define each of the application's components 
+                and attributes that affect the behavior of all components.
+            </p>
+
+            <p>The Android Studio development environment sets the values of 
+                several attributes by default :
+            </p>
+
+            <p><pre><xmp>
+android:allowBackup </xmp></pre></p>
+
+            <p>This attribute defines whether the application will participate in the 
+                backup and restore system.
+            </p>
+
+            <p><pre><xmp>
+android:icon
+            </xmp></pre></p>
+
+            <p>This attribute defines the application icon. The value of this attribute must 
+                point to a resource representing a graphic file. By default, Android Studio 
+                sets the value of this attribute to a path that points to a resource located 
+                inside the res folder of the Android project structure.
+            </p>
+
+            <p><pre><xmp>
+android:label 
+            </xmp></pre></p>
+
+            <p>This attribute defines the user-friendly name of the application, 
+                that is, the name intended for users. In the example of the Manifest file 
+                of the first Android application, the value of this attribute is set to a reference 
+                to the string resource containing the name of the application.
+            </p>
+
+            <p><pre><xmp>
+android:supportsRtl
+            </xmp></pre></p>
+
+            <p>This attribute declares support for right-to-left layouts. 
+                These are special situations in which it is necessary to display the 
+                text of the application written from right to left. Some languages 
+                (Persian, Arabic, Hebrew) have scripts that are written from right to left. 
+                In order to enable application support for such situations as well, the 
+                value of this attribute is set to true.
+            </p>
+
+            <p><pre><xmp>
+android:theme
+            </xmp></pre></p>
+
+            <p>This attribute defines the styles used to determine the 
+                formatting and styling of all Android application activities.
+            </p>
+
+            <h3>Activity element</h3>
+
+            <p>Every Android application must have at least one activity, and activities 
+                take care of handling the interaction that the user performs with the application's 
+                GUI.
+            </p>
+
+
+            <p><pre><xmp>
+<activity
+    android:name=".MainActivity"
+    android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+</activity>
+            </xmp></pre></p>
+
+            <p>The activity element within the manifest file defines one activity. 
+                All activities that the application consists must be listed within 
+                the manifest file, as separate activity elements.
+            </p>
+
+            <p>Element activity defines one attribute :</p>
+
+            <p><pre><xmp>
+android:name
+            </xmp></pre></p>
+
+            <p>This attribute specifies the name of the class that represents the activity. 
+                As a rule, the value of this attribute should be the full name of the Java class. 
+                The full name of the class is formed from the names of all packages in which the 
+                class is located, to which is added the name of the class itself. 
+                In short, the value of this attribute is written using a dot and the class name, 
+                thus the class name is automatically appended to the defined package within the 
+                Manifest file.
+            </p>
+
+            <h3>Intent-filter element</h3>
+
+            <p>Inside the activity element of the Manifest file there is an intent-filter 
+                element. 
+                This element defines the type of the request to which our activity will be 
+                able to form a response. That is, it defines what our activity will 
+                be able to do.
+            </p>
+
+            <p><pre><xmp>
+<intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+            </xmp></pre></p>
+
+            <p>Each intent-filter element must have at least one defined action. 
+                The action element is used for these purposes.
+            </p>
+
+            <p>In the shown example, a special construction is created as the 
+                value of the name attribute :
+            </p>
+
+            <p><pre><xmp>
+android.intent.action.MAIN
+            </xmp></pre></p>
+
+            <p>In this case, it is defined that the activity .MainActivity will be the 
+                entry point of the application. In other words, in this case, it is said that 
+                immediately after starting the application, the creation of an activity 
+                containing an intent-filter with this action will be performed.
+            </p>
+
+            <p>In addition to the action element, the intent-filter element also contains 
+                a category element:
+            </p>
+
+            <p><pre><xmp>
+<category android:name="android.intent.category.LAUNCHER" />
+            </xmp></pre></p>
+
+            <p>This element describes the defined action element in more detail, and 
+                its value in the specific shown example indicates that it is necessary 
+                to display the icon for launching the application in the main 
+                application launcher.
+            </p>
+
+          
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>USEFULL LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../AndroidHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a href="../index.html">Jelecode</a>
+        </div>
+    </div>
+
+</body>
+</html>
