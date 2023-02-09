@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Intent class</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="post-content">
+
+            <h1>Intent class</h1>
+
+            <p>The Intent class is used to create objects for messaging between multiple 
+                activities of a single application or multiple different applications. 
+                In the other words, objects of this class are used to exchange messages, 
+                that is, requests between application components of one or more applications.
+            </p>
+
+            <h4>Three basic uses of the Intent class:</h4>
+
+            <h5>- Starting an activity</h5>
+
+            <p>In applications with multiple activities, a program code must be defined to 
+                open a new activity. This is exactly what the Intent class is used for. The 
+                Intent class describes the activity that needs to be started and passes all the 
+                necessary data to the newly created activity.
+            </p>
+
+            <h5>- Starting the service</h5>
+
+            <p>In addition to starting an activity, Intent is also used to start a service. 
+                A service is a special application component that performs operations in the background 
+                and does not contain a graphical user interface. The Intent describes the service 
+                that is started and passes all the necessary data to the service that is opened.
+            </p>
+
+            <h5>- Broadcast messages</h5>
+
+            <p>Finally, by using the Intent class, it is possible to broadcast messages 
+                to a wide range of receivers. Broadcast is actually a special type of message, 
+                which can be received by any application installed on the system. The Android 
+                operating system itself is a very frequent emitter of this type of messages. 
+                By using the Intent class, it is possible to broadcast messages intended for 
+                all applications on the system from an application that we develop independently.
+            </p>
+
+            <h2>How Intent works</h2>
+
+            <p>The Intent class is used to express the intent of a component. Such component 
+                forms its intent with the Intent class and passes it to the Android operating 
+                system. Android operating system then determines, based on the passed Intent object, 
+                what it needs to do.
+            </p>
+
+            <h2>Creating an Intent</h2>
+
+            <p>Creating an Intent object requires a simple instantiation of this class, where it is 
+                necessary to pass at least two parameters to the constructor: the sender and the recipient. 
+            </p>
+            
+            <p>The following line of code illustrates the creation of an intent:</p>
+
+            <p><pre><xmp>
+Intent intent = new Intent(this, Target.class);
+            </xmp></pre></p>
+
+            <p>The first parameter passed to the constructor of the Intent class tells the 
+                Android operating system who is the sender of the intent. The example uses the 
+                "this" keyword to pass the current object of the class containing this line of code.
+            </p>
+
+            <p>The second parameter defines the name of the component that should accept 
+                the Intent object. In the example, the name of the "Target" class is specified, using 
+                the Target.class construction.
+            </p>
+
+
+
+
+
+
+
+            <h2>Passing parameters using the Intent object</h2>
+
+            <p>One of the main uses of the Intent class is the ability to pass data along with 
+                object of this class. It is very easy to pass data from one activity to another or 
+                even from one application to another.
+            </p>
+
+            <p>In order to pass some additional informations to the recipient using the Intent 
+                object, it is possible to use the putExtra() method. This is a method that has a 
+                numbers of signatures, but they all work in an identical way, using key-value pairs. 
+                Thus, putExtra method accepts two parameters, the first is a key and the second is 
+                a value.
+            </p>
+
+            <p><pre><xmp>
+intent.putExtra("message", value);
+            </xmp></pre></p>
+
+            <p>The first parameter of the String type, with the value "message", is the name, 
+                that is, the key for the value that is passed. The second parameter is the name 
+                of the variable that represents the value.
+            </p>
+
+            <p>The putExtra method has several different variants, depending on the type of 
+                value being passed. Thus, a variable with the name value from the example can be of 
+                different types: boolean, int, String, Object, etc.
+            </p>
+
+            <p>The putExtra method can be used multiple times to add multiple 
+                key-value pairs:
+            </p>
+
+            <p><pre><xmp>
+intent.putExtra("message1", value1);
+intent.putExtra("message2", value2);
+            </xmp></pre></p>
+
+            <h2>Reading data</h2>
+
+            <p>The process of reading data passed using the putExtra method requires several steps. 
+                The first thing to do inside the destination component, in order to access the passed 
+                data, is to call the getIntent() method.
+            </p>
+
+            <p>This is a method that returns an instance of the original Intent object. 
+                Given that such an object contains forwarded data, the next step is to read such data.
+            </p>
+
+            <p>The procedure for reading specific data depends on its type. Thus, the following 
+                example illustrates the process of reading String type data:
+            </p>
+
+            <p><pre><xmp>
+Intent intent = getIntent();
+String string = intent.getStringExtra("message");
+            </xmp></pre></p>
+
+            <p>In the example, you can see the use of the getStringExtra() method. 
+                It is the method used to read data of type String. In addition to this method, 
+                various other methods can be used, depending on the type of passed data: 
+                getIntExtra(), getFloatExtra(), getDoubleExtra(), getCharExtra(), getByteExtra(), 
+                getBooleanExtra(), ...
+            </p>
+
+            <h2>Types of Intent</h2>
+
+            <p>There are two different types of intents that can be expressed using the 
+                Intent class:
+            </p>
+
+            <h5>- Explicit intent </h5>
+
+            <p>Defines the component to be run by specifying its full name. Therefore, this type of Intent 
+                is most often used within an application, when the name of the component that 
+                needs to be started is known in advance.
+            </p>
+
+            <h5>- Implicit intent</h5>
+
+            <p>It is characterized by the fact that it does not specify the name of the component 
+                that needs to be started, but defines a generalized action that needs to be implemented. 
+                This type of Intent will be used, for example, in a situation where it is necessary 
+                to display the user's location on a map. Given that such work will be performed by 
+                the components of another application, the implicit Intent only expresses the intention 
+                to perform a certain action, without explicitly specifying the component that will 
+                perform it.
+            </p>
+
+            <p>An implicit intent defines an action that can be performed ba any application 
+                on the system taht is capable of such a thing. Thus, using an implicit Intent is very useful 
+                when the application itself cannot perform the required action, but some other 
+                application on the system can.
+            </p>
+
+            <p>For example, if you need to create functionality that allows you to send a message 
+                to some other devices, implicit intent is the ideal choice, because the system itself 
+                will choose the application that will perform the process of sending the message
+            </p>
+
+            <p>In case there are multiple apps on the system that can do such a job, Android allows the 
+                app users to select the app they want to use to perform a specific action.
+            </p>
+
+            <p></p>
+          
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../AndroidHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a href="../index.html">Jelecode</a>
+        </div>
+    </div>
+
+</body>
+</html>
