@@ -295,6 +295,7 @@ form {
     display: grid;
     grid-template-columns: 1fr;
     width: 60%;
+    padding-left: 5%;
 }
 
 
@@ -383,11 +384,11 @@ form {
     border: 2px solid #fff;
     color: #fff;
     border-radius: 30px;
-    padding: 10px 30px;
+    padding: 3%;
     cursor: pointer;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 20px;
+    width: 45%;
+    margin-left: 27.5%;
+    margin-top: 5%;
 }
 
 .col3 {
@@ -585,6 +586,7 @@ form {
 
 .post-wrapper {
     width: 90%;
+    padding-left: 0;
 }
 
 .post-content {
