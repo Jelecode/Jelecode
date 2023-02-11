@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Sharing message from Android activity | Implicit Intent</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="post-content">
+
+           <h1>Sharing message from Android activity | Implicit Intent</h1>
+
+           <p>Creating functionality that allows sending a message to some other 
+            devices/people, using the Implicit Intent.
+           </p>
+
+           <p>Implicit Intent is the ideal choice, because the system itself will choose 
+            the application that will perform the process of sending the message.
+           </p>
+
+           <p>In case there are multiple apps on the system that can do such a job, Android 
+            will allow the users to select the app that they want to do the job.
+           </p>
+
+           <h3>Creating an Implicit Intent - message sharing</h3>
+
+           <p>Creating an implicit intent will be illustrated in a simple Android 
+            application with a single input field - username, and a single button to 
+            send a message.
+           </p>
+
+           <p>The layout of this app will look like the following image:</p>
+
+           <img src="../images/Android/ImplicitIntentSendingMessage/ImplicitIntent1.png">
+
+           <p>The XML code for this layout will be as follows:</p>
+
+           <p><pre><xmp>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSendMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send to Friend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        android:onClick="sendToFriend"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+           </xmp></pre></p>
+
+           <p>From the displayed code, the most important thing to notice 
+            is the event handler method sendToFrirend, defined by the onClick attribute. 
+            It is the method that will be activated when clicking on this Button control.
+           </p>
+
+           <p>The code for this method will be as follows:</p>
+
+           <p><pre><xmp>
+public void sendToFriend(View view) {
+    EditText nameText = findViewById(R.id.editTextName);
+    String messageText;
+        
+    if(nameText.getText().toString().trim().length() == 0) {
+        Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
+    } else {
+        messageText = "Hello my friend. It is " + nameText.getText() +
+                ". This is my new Android app.";
+        
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, messageText);
+        sendIntent.setType("text/plain");
+        
+        if(sendIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(sendIntent);
+        }
+    }
+}
+           </xmp></pre></p>
+
+           <p>Inside the sendToFriend method, a check is made to see if the user 
+            has entered his name in the text input field.
+           </p>
+
+           <p>If the user has not entered a name, he receives a Toast message 
+            informing him that he must enter his name in the text input field.
+           </p>
+
+           <p>When the user enters his name and clicks on the "SEND TO FRIEND" 
+            button, the creation and broadcasting of a message intended for a friend will 
+            begin. 
+           </p>
+
+           <p>The message is placed inside the String variable messageText, followed 
+            by a piece of code to create an implicit intent.
+           </p>
+
+           <p>Creating an Intent implies instantiating a class of the same name. 
+            To make an Intent implicit, its action is defined. This is the basic 
+            feature of implicit Intent.
+           </p>
+
+           <p>Unlike the explicit Intent, the implicit Intent does not specify the 
+            specific component that will perform action, but only the name of the 
+            action that needs to be performed. In the example, the constant 
+            ACTION_SEND is defined as an action. In this way, it is made known that the intent 
+            of the Intent object is to send certain data to a recipient that is not 
+            known in advance.
+           </p>
+
+           <p>After defining the action, the data that will be forwarded together with 
+            the Intent type object is also defined, using the putExtra method.
+           </p>
+
+           <p>One Intent class constant - EXTRA_TEXT was used to define the key.</p>
+
+           <p>In addition to the type of action and the data itself, the implicit Intent 
+            must receive information about the type of data passed to it. In the example, this 
+            is defined by setType method, and text/plain is defined as the type of data to be 
+            sent. It is about pure textual data.
+           </p>
+
+           <p>After configuring the implicit Intent, the activity can be started. 
+            However, one thing to consider when starting an activity using an inplicit Intent 
+            is that there may not be a suitable activity on the system that can handle the action 
+            defined by the Intent. In that such situation, the application crashes. Therefore, at 
+            the end of the logic of the sendToFriend method, a conditional block is placed, which 
+            examines the existence of an activity that can process the action of the created 
+            implicit Intent.
+           </p>
+
+           <p>The resolveActivity method determines whether there is an activity on the 
+            system that could perform the Intent's action. If no such activity exists, this method 
+            returns null. Therefore, in the example, the method to activate the activity is 
+            called only if the resolveActivity method returns a value different than null, 
+            thus preventing the application from crashing.
+           </p>
+
+           <h4>The message broadcast process is shown in the image:</h4>
+
+           <img src="../images/Android/ImplicitIntentSendingMessage/ImplicitIntent2.png"> 
+
+           <h4>The complete source code of the activity:</h4>
+
+           <p><pre><xmp>
+package com.jelenko.sendingmessage;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void sendToFriend(View view) {
+        EditText nameText = findViewById(R.id.editTextName);
+        String messageText;
+
+        if(nameText.getText().toString().trim().length() == 0) {
+            Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
+        } else {
+            messageText = "Hello my friend. It is " + nameText.getText() +
+                    ". This is my new Android app.";
+
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, messageText);
+            sendIntent.setType("text/plain");
+
+            if(sendIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(sendIntent);
+            }
+        }
+    }
+}
+           </xmp></pre></p>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../AndroidHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a href="../index.html">Jelecode</a>
+        </div>
+    </div>
+
+</body>
+</html>
