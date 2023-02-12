@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Text in HTML</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+
+        <div class="post-content">
+
+            <h1>Text in HTML</h1>
+
+            <p>The basis of every HTML document is text. <br>However, text within an HTML document 
+                can have different contexts, just like within any other text document, where 
+                different text sections can be layered.
+            </p>
+
+            <p>Thus, under the term text can be mentioned: titles, paragraphs, transitions to a new line, empty 
+                spaces, vertical lines, as well as various other forms of text that acquire a 
+                special meaning through special formatting.
+            </p>
+
+            <p>We will cover the following topics:</p>
+
+            <p>- headings</p>
+
+            <p>- paragraphs</p>
+
+            <p>- text formatting</p>
+
+            <p>- special characters</p>
+
+            <h2>Headings</h2>
+
+            <p>Each document begins with a title. <br>Different parts of the deocument can be 
+                identified by subheadings of different levels. The HTML language knows 6 
+                levels of headings that are created using the following elements:
+            </p>
+
+            <p><pre><xmp>
+<h1>
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+
+            </xmp></pre></p>
+
+            <p>Examples of different HTML headings:</p>
+
+            <p><pre><xmp>
+<h1>Lorem ipsum dolor sit amet</h1>
+
+<h2>Lorem ipsum dolor sit amet</h2>
+
+<h3>Lorem ipsum dolor sit amet</h3>
+
+<h4>Lorem ipsum dolor sit amet</h4>
+
+<h5>Lorem ipsum dolor sit amet</h5>
+
+<h6>Lorem ipsum dolor sit amet</h6>
+
+            </xmp></pre></p>
+
+            <p>The displayed code in the browser will produce the 
+                result as in the picture:
+            </p>
+
+            <img src="../images/HTML-CSS-JS/TextInHTML/textInHtml1.png">
+
+            <p>As can be seen from image, different level headings are 
+                displayed using different font sizes and formatting. <br> 
+                Also, when displaying, the browser adds one empty line before 
+                and after the heading.
+            </p>
+
+            <h2>Paragraphs</h2>
+
+            <p>In an HTML document, paragraphs are created by placing them between tags:</p>
+
+            <p><pre><xmp>
+<p></p>
+
+            </xmp></pre></p>
+
+            <p>Watch the video for creating headings and paragraphs:</p>
+
+            <div class="video_link">
+                <a href="" target="_blank"></a>
+            </div>
+
+            <h2>HTML elements for text formatting</h2>
+
+            <p>The HTML language knows special elements for defining text using 
+                different formatting. <br>Those special elements are:
+            </p>
+
+            <p><pre><xmp>
+<b> - bold text 
+
+<strong> - important text 
+
+<i> - italic text 
+
+<em> - highlighted text 
+
+<mark> - marked text 
+
+<small> - small text 
+
+<del> - deleted text 
+
+<ins> - inserted text 
+
+<sub> - subscript 
+
+<sup> - superscript
+
+            </xmp></pre></p>
+
+            <h3>New line</h3>
+
+            <p>If it is necessary to independently influence where the text 
+                line break will occur, it is possible to use tag:
+            </p>
+
+            <p><pre><xmp>
+<br>
+            </xmp></pre></p>
+
+            <p>This element doesn not have its own content and is one of self-closing 
+                elements, since it does not have a closing tag.
+            </p>
+
+            <h4>Hr</h4>
+
+            <p><pre><xmp><hr></xmp></pre></p>
+
+            <p><b>Hr</b> is an element that enables the thematic transition of the text. <br>However, 
+            this element got its name from the term <b>horizontal rule</b>, which is 
+            a line that can be used to separate two sections of text.
+            </p>
+
+            <h2>Spaces and lines in the text</h2>
+
+            <p>It is very important to note a few things about spaces and new lines 
+                in the text:
+            </p>
+
+            <p>- HTML does not handle multiple spaces and newlines</p>
+
+            <p>- Multiple spaces are always treated as a single space</p>
+
+            <p>- Newlines breaks are ignored.</p>
+
+            <p>If it is necessary to move to a new line, use element <b>br</b>.</p>
+
+            <p>If there is ever a need to preserve multiple spaces, ad well as 
+                transitions to a new line without using the <b>br</b> element, it is 
+                possible to us the <b>pre</b> element. <br>The entire 
+                content inside the <b>pre</b> element retains all spaces and newlines.
+            </p>
+
+            <h2>Special characters</h2>
+
+            <p>Certain characters in the HTML language have a special meaning.</p>
+
+            <p>The ideal representatives of such characters are certainly the &lt and &gt characters, 
+                which are used to build HTML tags. <br>When an HTML tag is written, the browser 
+                does not display it on the page in an original form, but interprets it and its 
+                possible content in a specific way.
+            </p>
+
+            <p>If we want these characters to be displayed inside the browser in their origilan 
+                form, we must use replacement characters.
+            </p>
+
+            <p>Replacement characters or HTML entities are useful when we need to solve 
+                the problem of reserved characters, but also for writing special symbols.
+            </p>
+
+            <p>Some of the most useful HTML entities are:</p>
+
+            <p><pre><xmp>
+&nbsp;    non breaking space
+
+&lt;      < 
+
+&gt;      >
+
+&amp;     &
+
+            </xmp></pre></p>
+
+            <p>Watch the video for text formatting and special characters:</p>
+
+            <div class="video_link">
+                <a href="" target="_blank"></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a href="../index.html">Jelecode</a>
+        </div>
+    </div>
+
+</body>
+</html>
