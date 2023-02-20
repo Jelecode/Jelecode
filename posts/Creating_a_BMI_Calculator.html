@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Creating a BMI Calculator App</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="post-content">
+
+            <h1>Creating a BMI Calculator App</h1>
+
+            <p>The abbreviation BMI refers to the term <i>Body Mass Index</i>, that is, 
+            fat index in the body.</p>
+
+            <p>When calculating the BMI value, a person's height and weight are taken into 
+                the formula. BMI is a good  indicator of body's health and can determine 
+                whether a person is overweight or underweight.
+            </p>
+
+            <p>The formula for calculating BMI is as follows :</p>
+
+            <p><i>BMI = WEIGHT(kg) / HEIGHT * HEIGHT (m)</i></p>
+
+            <p>After determining the BMI value, it can also be determined to 
+                which category a person belongs :
+            </p>
+
+            <p><pre><xmp>
+<16        - Severe Thinness
+
+16-17      - Moderate Thinness
+
+17-18.5    - Mild Thinness
+
+18.5-25    - Normal
+
+25-30      - Overweight
+
+30-35      - Obese Class I
+
+35-40      - Obese Class II
+
+>40        - Obese Class III
+
+            </xmp></pre></p>
+
+            <p>The given formula for calculating BMI values and categories are 
+                enough data to create an Android application for calculating BMI.
+            </p>
+
+            <h2>Watch the full video to create the BMI Calculator App :</h2>
+
+            <div class="video_link">
+                <a href="" target="_blank">Creating a BMI Calculator App</a>
+            </div>
+
+            <h2>XML file of the main activity </h2>
+
+            <p><pre><xmp>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Please, enter your height and weight "
+        app:layout_constraintBottom_toTopOf="@+id/textViewHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textSize="16dp"
+        android:text="Height :"
+        app:layout_constraintBottom_toTopOf="@+id/heightEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/heightEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        app:layout_constraintBottom_toTopOf="@+id/textViewWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeight" />
+
+    <TextView
+        android:id="@+id/textViewWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textSize="16dp"
+        android:text="Wight :"
+        app:layout_constraintBottom_toTopOf="@+id/weightEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightEditText" />
+
+    <EditText
+        android:id="@+id/weightEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWeight" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightEditText"
+        android:onClick="calculateButtonClick"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+            </xmp></pre></p>
+
+            <h2>Helper Class for calculating BMI index and category</h2>
+
+            <p><pre><xmp>
+package com.jelenko.bmi.core;
+
+public class Health {
+
+    private String errorMsg;
+
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public double calculateBMI(double heightCm, double weightKg) {
+        double bmiIndex = -1;
+        if (heightCm <= 0 && weightKg <= 0) {
+            errorMsg = "Height and weight can't be zero or less";
+        } else {
+            bmiIndex = weightKg / ((heightCm / 100) * (heightCm / 100));
+        }
+        return bmiIndex;
+    }
+
+    public String determineCategory(double bmiIndex) {
+        String bmiCategory = "";
+        if (bmiIndex < 16) {
+            bmiCategory = "Severe Thinness";
+        } else if (bmiIndex >= 16 && bmiIndex < 17) {
+            bmiCategory = "Moderate Thinness";
+        } else if (bmiIndex >= 17 && bmiIndex < 18.5) {
+            bmiCategory = "Mild Thinness";
+        } else if (bmiIndex >= 18.5 && bmiIndex < 25) {
+            bmiCategory = "Normal";
+        } else if (bmiIndex >= 25 && bmiIndex < 30) {
+            bmiCategory = "Overweight";
+        } else if (bmiIndex >= 30 && bmiIndex < 35) {
+            bmiCategory = "Obese Class I";
+        } else if (bmiIndex >= 35 && bmiIndex < 40) {
+            bmiCategory = "Obese Class II";
+        } else if (bmiIndex >= 40) {
+            bmiCategory = "Obese Class III";
+        }
+        return bmiCategory;
+    }
+
+}
+
+            </xmp></pre></p>
+
+            <h2>Main Activity of the App</h2>
+
+            <p><pre><xmp>
+package com.jelenko.bmi;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.jelenko.bmi.core.Health;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText heightText;
+    EditText weightText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        heightText = findViewById(R.id.heightEditText);
+        weightText = findViewById(R.id.weightEditText);
+    }
+
+    public void calculateButtonClick(View view) {
+
+        double height = 0;
+        double weight = 0;
+
+        if (!heightText.getText().toString().equals("") && Double.parseDouble(heightText.getText().toString()) != 0) {
+            height = Double.parseDouble(heightText.getText().toString());
+        }
+
+        if (!weightText.getText().toString().equals("") && Double.parseDouble(weightText.getText().toString()) != 0) {
+            weight = Double.parseDouble(weightText.getText().toString());
+        }
+
+        Health health = new Health();
+        double bmiResult = health.calculateBMI(height, weight);
+
+        String resultText;
+
+        if (bmiResult != -1) {
+            String bmiCat = health.determineCategory(bmiResult);
+            resultText = "Your BMI index is " + String.format("%.2f", bmiResult) + "\nBMI category: " + bmiCat;
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setTitle("BMI");
+            alertDialogBuilder.setMessage(resultText);
+            alertDialogBuilder.setPositiveButton("DONE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    heightText.setText("");
+                    weightText.setText("");
+
+                }
+            });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        } else {
+            Toast.makeText(this, health.getErrorMsg(), Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+
+            </xmp></pre></p>
+
+            <h2>Download this App on Play Store</h2>
+
+            <div class="video_link">
+                <a href="https://play.google.com/store/apps/details?id=com.jelenko.bmicalculator" target="_blank">BMI Calculator App</a>
+            </div>
+
+            <p><pre>
+
+                
+            </pre></p>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a href="../index.html">Jelecode</a>
+        </div>
+    </div>
+
+</body>
+</html>
