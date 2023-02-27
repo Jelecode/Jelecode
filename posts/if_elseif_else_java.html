@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>If, else if, else - Java</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+
+        <div class="post-content">
+
+            <h1>If, else if, else</h1>
+
+            <p>Controlling the flow of execution in Java can be achived 
+                by branching (conditional execution) and looping (repetition).
+            </p>
+
+            <h3>Branching</h3>
+
+            <p>Branching allows ceratin commands to be executed only if a condition is met. 
+                This is why branching is closely related to logical data types and logical 
+                operators. 
+            </p>
+
+            <p>Java makes it possible to create several possible branches of execution, and 
+                the selection of the branch of execution itself depends on some control logic value.
+            </p>
+
+            <p>Java recognized two types of conditional statements : </p>
+
+            <p>- if ... else; </p>
+
+            <p>- switch.</p>
+
+            <h2>If statement</h2>
+
+            <p>The basic branching statement in Java is the <i>if</i> statement. 
+            This command exists in practically all programming languages, and its 
+            purpose is reflected in the name itself.
+            </p>
+
+            <p>The word <i>if</i>, by itself, does not make much sense in retoric, and 
+            the same in programming. <br>In addition to this keyword, it is necessary to 
+            set some condition on which the outcome of this command will depend. <br>So 
+            the general syntax of the <i>if</i> statement looks like this :
+            </p>
+
+            <p><pre><xmp>
+if (condition) {
+    //code to execute if condition is met.
+}
+
+            </xmp></pre></p>
+
+            <p>To form an <i>if</i> statement, the keyword <i>if </i> is used, followed by a 
+            condition in brackets. If the condition is met, the code block of the 
+            <i>if</i> statement is executed.
+            </p>
+
+            <p>An example that illustrates the use of the if statement :</p>
+
+            <p><pre><xmp>
+int age = 17;
+
+if(age < 18) {
+    System.out.println("Underage");
+}
+            </xmp></pre></p>
+
+            <p>At the beginning, a variable with the name <i>age </i> an the value <i>17 </i> 
+            is declared and initialized. After this line, the <i>if </i> command follows. 
+            The condition is defined to check whether the value of the <i>age </i> variable is less 
+            then 18. <br>If this condition is met, the block of code between curly brackets is 
+            executed, which in the example has only one command.
+            </p>
+
+            <p>If the value of the variable <i>age </i> was greater than or equal to the 18, 
+            the block of code from the example would not be executed.</p>
+
+            <h3>Blocks of the conditional statements</h3>
+
+            <p>In the example just shown, you could see that the <i>if </i> statements 
+            consists of a condition and a block. <br>A block is formed like any other block 
+            in the Java language, using curly brackets.
+            </p>
+
+            <p><pre><xmp>
+if(age < 18) {
+    System.out.println("Underage");
+} 
+            </xmp></pre></p>
+
+            <p>However, it is important to know that the brackets for forming a block can 
+                be omitted if the block has only one command :
+            </p>
+
+            <p><pre><xmp>
+if(age < 18) 
+    System.out.println("Underage");
+            </xmp></pre></p>
+
+            <p>It is important to remember that in this case an <i>if </i> conditional 
+            block can have only one statement. Any command after that will not be part of the <i>if </i> 
+            block.</p>
+
+            <h2>if...else statement</h2>
+
+            <p>If it is necessary to execute a specific block of code when the <i>if </i> 
+            condition is not met, the keyword <i>else </i> is used, so <i>if </i>  becomes 
+            <i>if...else </i>.</p>
+
+            <p><i>if...else </i> is a flow control command that allows defining the logic that will 
+            be executed if the condition is met, but also the logic that will be executed if the 
+            condition is not met. <br>The syntax of the <i>if...else </i> state is as follows :</p>
+
+            <p><pre><xmp>
+if(condition) {
+    statement_1;
+} else {
+    statement_2;
+}
+            </xmp></pre></p>
+
+            <p>After the keyword <i>if </i>, the condition is specified in brackets. <br>If 
+            this condition is met, the first statement is executed (statement_1), otherwise 
+            the second statement is executed (statement_2).</p>
+
+            <p>Depending on whether the condition is met, one of these two code blocks 
+                is executed. It is important to understand that one block of code will need to be 
+                executed. Which block it will be depends on the condition.
+            </p>
+
+            <p>An example of using <i>if...else </i> statement :</p>
+
+            <p><pre><xmp>
+if (age < 18) {
+    System.out.println("Underage");
+} else {
+    System.out.println("Adult");
+}
+            </xmp></pre></p>
+
+            <p>In the example, the condition <i>age&lt;18 </i> is defined, if the age is 
+            less than 18, the code block that prints "Underage" will be executed, otherwise 
+            the code block that prints "Adult" will be executed.</p>
+
+            <p>An <i>if...else </i> statement can have only one <i>if </i> block 
+            and only one <i>else </i> block. The condition is always defined only 
+            on the <i>if </i> block.</p>
+
+            <h2>if...else if... else statement</h2>
+
+            <p>In the previous lines, it was shown that the <i>if...else </i> statement 
+            can have only one condition and that is on the <i>if </i> block. <br>If it is 
+            necessary to define additional code blocks with their own conditions, 
+            <i>if...else if...else </i> statement is used.</p>
+
+            <p><i>else...if </i> enables additional conditions to be defined when creating an 
+            <i>if...else </i> statement, so <i>if...else </i> statement becomes <i>if...else if...else </i> 
+            statement.</p>
+
+            <p>The syntax of such commands is as follows :</p>
+
+            <p><pre><xmp>
+if(condition_1) {
+    statement_1;
+} else if(condition_2) {
+    statement_2;
+} else if(condition_3) {
+    statement_3;
+} else {
+    statement_4;
+}
+            </xmp></pre></p>
+
+            <p>In this example, in addition to the <i>if </i> and <i>else </i> blocks, there 
+            are also two <i>else if </i> blocks. <br>If the first condition is met (condition_1), 
+            statement_1 will be executed. If the second condition is met (condition_2), statement_2 
+            will be executed. If the condition_n is met, statement_n will be executed. </p>
+
+            <p>It is important to understand that the number of <i>else if </i> blocks can be 
+            arbitrary. </p>
+
+            <p>If none of the conditions are met, the command in the <i>else </i> block is 
+            executed.</p>
+
+            <p>An example of using the <i>if...else if...else </i> command is as follows :</p>
+
+            <p><pre><xmp>
+int age = 32;
+
+if(age < 18) {
+    System.out.println("Underage");
+} else if(age < 30) {
+    System.out.println("18 - 30");
+} else if(age < 40) {
+    System.out.println("30 - 40");
+} else if(age < 50) {
+    System.out.println("40 - 50");
+} else if(age < 60) {
+    System.out.println("50 - 60");
+} else {
+    System.out.println("Older than 60");
+}
+
+
+Exit :
+30 - 40
+
+            </xmp></pre></p>
+
+            <p>The first command declares and initializes the <i>age </i> variable with the 
+            value 32.</p>
+
+            <p><i>if...else if...else </i> command has 5 conditions. If the value of variable 
+            <i>age </i> is less than 18, the first code block is executed. Since this is not the 
+            case, the second condition (age&lt;30), is examined, since it is also not true, 
+            the third condition (age&lt;40), is examined. <br>The third condition is met, 
+            because 32 is less than 40, so the execution of the program enteres this <i>else if </i> 
+            block and the message "30 - 40" is printed.</p>
+
+            <p>It is important to point out another very important feature of the shown construction. 
+                The fourth block has the condition age&lt;50 and the fifth block has the condition 
+                age&lt;60. <br>If these conditions are analyzed, it can be concluded that they are 
+                also met, because 32 is less then 50 and 32 is less then 60. <br>However, within 
+                the statement <i>if...else if...else </i>, only one block of code is always executed, 
+                and that is the first one whose condition turns out to be true.
+            </p>
+
+            <h2>Ternary operator</h2>
+
+            <p>By using the ternary operator, it is possible to assign a value to a 
+                variable based on some condition :
+            </p>
+
+            <p><b>String message = (age&lt;18) ? "You are underage" : "You are adult";</b></p>
+
+            <p>The condition is <i>age&lt;18 </i>, and the potential values that could be assigned to the 
+            <i>message </i> variable are "You are underage" and "You are adult".</p>
+
+            <p>If the condition is met, "You are underage" is assigned to the variable <i>message </i>, 
+            otherwise "You are adult" is assigned to the variable.</p>
+
+            <p>The ternary operator can always be transformed into an <i>if...else </i> statement. 
+            <br>Thus, the shown logic can be transformed as follows : </p>
+
+            <p><pre><xmp>
+String message = "";
+int age = 19;
+
+if(age < 18) {
+    message = "You are underage";
+} else {
+    message = "You are adult";
+}
+
+System.out.println(message);
+
+
+Exit : 
+You are adult
+
+            </xmp></pre></p>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a href="../index.html">Jelecode</a>
+        </div>
+    </div>
+
+</body>
+</html>
