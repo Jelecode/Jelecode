@@ -178,6 +178,14 @@ body {
     padding: 20px;
 }
 
+.contact_column_1 h1{
+    color: #4facfe;
+}
+
+.contact_column_2 h1{
+    color: #4facfe;
+}
+
 .contact_box {
     width: 395px;
     height: 440px;
