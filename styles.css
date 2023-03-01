@@ -407,15 +407,25 @@ form {
 
 .col3 {
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-.col3 a {
+.col3 .brandLogo {
     font-weight: 1900;
     text-transform: uppercase;
     text-decoration: none;
     color:rgb(255, 255, 255);
     font-size: 1.2em;
     letter-spacing: 2px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.col3 .privacyPolicy {
+    font-weight: 500;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
     font-weight: bolder;
 }
 
