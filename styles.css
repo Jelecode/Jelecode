@@ -144,11 +144,17 @@ body {
 }
 
 .profile-content-wrapper {
+    margin-left: 23%;
+    width: 50%;
     text-align: center;
     padding: 30px;
 }
 
 .profile-content-wrapper h1 {
+    color: #4facfe;
+}
+
+.profile-content-wrapper h2 {
     color: #4facfe;
 }
 
@@ -500,20 +506,14 @@ form {
 
 /* About page styles */
 
-.two-column-wrapper {
-    grid-template-columns: 1fr;
-}
-
 .profile-image-wrapper img {
     height: 180px;
 }
 
 .profile-content-wrapper {
+    margin-left: 2%;
+    width: 95%;
     padding: 8px;
-}
-
-.profile-content-wrapper h1 {
-    color: #4facfe;
 }
 
 .profile-link-wrapper{
