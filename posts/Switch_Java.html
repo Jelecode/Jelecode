@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Switch in Java</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+
+        <div class="post-content">
+
+            <h1>Switch</h1>
+
+            <p><b><i>Switch </i></b> is a flow control statement within the Java programming language. 
+                This statement performs flow control in a slightly different way than the 
+                <b><i>if...else </i></b> statement.
+            </p>
+
+            <p>The syntax of the <b><i>Switch </i></b> statement : </p>
+
+            <p><pre><xmp>
+switch (expression) {
+
+    case label_1:
+        statements_1;
+        break;
+
+    case label_2:
+        statements_2;
+        break;
+
+            ... 
+
+    default:
+        statements_default;
+        break;
+
+}
+
+            </xmp></pre></p>
+
+            <p>The <b><i>switch </i></b> statement compares the <b><i>expression </i></b> value with 
+            the <b><i>case </i></b> clause values. In the shown example, the value of the <b><i>case </i></b> 
+            clasues are <b><i>label_1 </i></b>, <b><i>label_2 </i></b>, etc.
+            </p>
+
+            <p>When the matching of the <b><i>expression </i></b> value with some of the 
+                <b><i>case </i></b> clasues is determined, the execution of the program is 
+                redirected to that block. In case no matches are found, the <b><i>default </i></b> block 
+                is executed.
+            </p>
+
+            <h2>Example of using a switch statement</h2>
+
+            <p>A practical example of using the switch statement might look like this :</p>
+
+            <p><pre><xmp>
+int x = 1;
+
+switch (x) {
+
+    case 0:
+        System.out.println("zero");
+        break;
+
+    case 1:
+        System.out.println("one");
+        break;
+
+    default:
+        System.out.println("unknown value");
+        break;
+
+}
+
+            </xmp></pre></p>
+
+            <p>In the shown example, a <b><i>switch </i></b> command was created which, 
+            depending on the value of the variable <b><i>x </i></b>, transmits a 
+            certain message.</p>
+
+            <p>When the value of variable <b><i>x </i></b> is equal to 0, <b><i>zero </i></b> is 
+            printed on the output. <br>When the value of the variable <b><i>x </i></b> is equal 
+            to 1, <b><i>one </i></b> is printed on the output. <br>Finally, if the value 
+            of the variable <b><i>x </i></b> is anything other than the numbers 0 and 1, the 
+            text <b><i>unknown value</i></b> is printed on the output.</p>
+
+            <p>Within the <b><i>switch </i></b> statement, the equality of the contol value 
+            (which is x in the example) with the values of individual <b><i>case </i></b> blocks 
+            (values ster the keyword <i>case</i>) is determined. <br>In other words, 
+            <b><i>switch </i></b> allows creation of logical conditions in which equality is 
+            checked, but not other logical types (greater than, less than, unequally, ...).</p>
+
+            <p>The <b>control value</b> of the <b><i>switch </i></b> command can be of the 
+            following type: <b><i>char, byte, short, int, Character, Byte, Short, Integer, 
+            String, enum
+            </i></b>.</p>
+
+            <p><b>The default code block</b> is, by convention, placed at the end of the 
+            <b><i>switch </i></b> statement, but this doen not have to be rule. This block 
+            of code can be placed anywhere within a <b><i>switch </i></b> statement.</p>
+
+            <h3>Each of the switch cases must end with a break statement</h3>
+
+            <p>Each of the cases inside the <b><i>switch </i></b> statement has a 
+            <b><i>break </i></b> keyword at the end. <br>The role of the <i>break</i> keyword 
+            is to finish the execution of the code inside the <b><i>switch </i></b> statement. 
+            <br>When the execution environment encounters this statement, execution of the 
+            <b><i>switch </i></b> statement ends. <br>If this command is not specified at the 
+            end of the cases within the <b><i>switch </i></b> construction, the <b>switch</b> 
+            will not function correctly.</p>
+
+            <h2>Improved switch</h2>
+
+            <p>The previous examples illustrated the use of the standard <b><i>switch </i></b> 
+            construction, which exists in most other programming languages. <br>However, the 
+            Java language additionally improves the <b><i>switch </i></b> command, so it is 
+            possible to use it in a slightly different, more compact way. Such a 
+            <b><i>switch </i></b> is called an <b><i>improved switch</i></b>.</p>
+
+            <p>Example of the impoved switch in Java :</p>
+
+            <p><pre><xmp>
+int x = 1;
+
+switch (x) {
+    case 0 -> System.out.println("zero");
+    case 1 -> System.out.println("one");
+    default -> System.out.println("unknown value");
+}
+            </xmp></pre></p>
+
+            <p>Even at first glance, it is clear that the code just shown is much more compact 
+                than the one from the previous example. <br>Also, the <b><i>improved switch </i></b> 
+                frees us from the need to define a <b><i>break</i></b> statement at the end of each 
+                case, which is a huge advantage of the Java language.
+            </p>
+
+            <p><pre>
+
+
+                
+            </pre></p>
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a class="brandLogo" href="../index.html">Jelecode</a>
+            <a class="privacyPolicy" 
+            href="https://www.freeprivacypolicy.com/live/aac3d1a9-c016-45cc-8ee2-06aac0b82c64" 
+            target="_blank">Privacy Policy</a>
+        </div>
+    </div>
+
+</body>
+</html>
