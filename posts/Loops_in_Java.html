@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Loops in Java - for, while, do-while</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+
+        <div class="post-content">
+
+            <h1>Loops</h1>
+
+            <p>In the world of programming, loops allow a specific piece of code to be 
+                executed multiple times by looping back the flow of execution.
+            </p>
+
+            <p>At the core of every loop is a process of repetition. Each repetition is 
+                called <b>iteration</b>. <br>So loops are acttually made up of iterations. <br>The 
+                loop starts with the first iteration and ends after the last iteration. The number 
+                of iterations of a loop can be arbitraty, from zero to infinity. <br>A loop with 
+                an infinite number of iterations has no end, so it is called a <b>dead loop</b>.
+            </p>
+
+            <h1>Loops in Java</h1>
+
+            <p>Java has several commands that allow creations loops:</p>
+
+            <p> - for</p>
+
+            <p> - while</p>
+
+            <p> - do...while</p>
+
+            <p>Also, Java has two commands to control the execution of loops:</p>
+
+            <p> - break</p>
+
+            <p> - continue</p>
+
+            <h2>For loop</h2>
+
+            <p>A <b>for </b> loop allows a specific block of code to be executed an 
+            exact number of times.</p>
+
+            <p>Syntax of <b>for</b> loop:</p>
+
+            <p><pre><xmp>
+for (initialization; condition; final-expression)
+    statement
+
+            </xmp></pre></p>
+
+            <p>A <b>for </b> loop is created using the <i>for</i> keyword. After this word, 
+            there are three statements in brackets :</p>
+
+            <p>- <b>initialization</b> - An intial statement that is executed only once, at the 
+            beginning of the loop execution. It is used to initialize one or more loop counters.</p>
+
+            <p>- <b>condition</b> - An command establishing the truth of a condition. If the condition 
+            is met, the loop body is executed. This command is executed before each iteration.</p>
+
+            <p>- <b>final-expression</b> - command to be executed after each iteration. It is mainly 
+            used to increase or decrease the counter value.</p>
+
+            <p>After the brackets containing the three statement just described, follows the body 
+                of the loop inside the curly brackets. Inside the loop block can be any number of 
+                statements that are repeated with each iteration.
+            </p>
+
+            <p>Example:</p>
+
+            <p><pre><xmp>
+for(int i=0; i<3; i++) {
+    System.out.println("Hello");
+}
+
+Exit:
+
+Hello
+Hello
+Hello
+
+            </xmp></pre></p>
+
+            <p>- the variable representing the counter exists only inside the <b>for</b> loop 
+            and cannot be accessed outside the loop.</p>
+
+            <h2>A loop within a loop</h2>
+
+            <p>One <b>for</b> loop can be placed inside another <b>for</b> loop and thus 
+            get an interesting structure. Such an approach is very often used in more 
+            complex programs.</p>
+
+            <p><pre><xmp>
+for(int i=0; i<3; i++) {
+    for(int j=0; j<5; j++) {
+        System.out.println(j);
+    }
+}
+
+            </xmp></pre></p>
+
+            <p>It is easiest to observe this structure form the inside, that is, starting from the inner 
+                loop. It has counter named <b>j</b> and inside the body of the loop the value of the counter 
+                is printed. This inner loop will be executed five times, which means that the output will be 
+                the values 0, 1, 2, 3, 4. <br>If there were no external <b>for</b> loop, that would be the only 
+                output we would get from this program. <br>However, the outer loop causes the execution 
+                of the inner loop to be repeated 3 times, resulting the following output:
+            </p>
+
+            <p><pre>
+0
+1
+2
+3
+4
+0
+1
+2
+3
+4
+0
+1
+2
+3
+4
+
+            </pre></p>
+
+            <p>It is important to note that each loop has a counter with a unique name. Since 
+                the inner loop belongs to the outer loop block, it is necessary to use a variable 
+                with a unique name for the counter.
+            </p>
+
+            <h2>While loop</h2>
+
+            <p>A <b>while</b> loop executes a specific block of code as long as the loop's 
+            execution condition is met. This practically means that this type of loop does 
+            not have a predefined number of iterations.</p>
+
+            <p>The syntax of the <b>while</b> loop is as follows:</p>
+
+            <p><pre><xmp>
+while(condition) {
+    statement
+}
+
+            </xmp></pre></p>
+
+            <p>- As long as the condition is met, the block of code, i.e. the body of the loop, 
+                is executed.
+            </p>
+
+            <p>Example:</p>
+
+            <p><pre><xmp>
+int x = 0;
+
+while (x < 3) {
+    System.out.println("Hello");
+    x++;
+}
+
+            </xmp></pre></p>
+
+            <p>At the beginning, the variable <b>x</b> is declared and initialized, with the value 0. 
+            The <b>while</b> loop is created by using the <b>while</b> keyword, and after it, the 
+            condition <b>x &lt; 3</b> is defined inside the brackets. <br>This practically 
+            means that the loop will be executed as long as <b>x</b> is less than 3. <br>The body 
+            of the loop is defines by curly brackets. Inside the body of the loop, the message 
+            <b>Hello</b> is printed, but also the variable <b>x</b> is increased by one. <br>If 
+            this increment were not specified, an infinite loop would be created, i.e. a loop 
+            that would not stop executing.</p>
+
+            <p>At the exit we get:</p>
+
+            <p><pre>
+Hello
+Hello
+Hello
+
+            </pre></p>
+
+            <h2>do...while loop</h2>
+
+            <p>The <b>while</b> loop just described in no way guarantees that its body will be executed 
+            at all. Simply, if the condition is not met, the body of this loop will not be executed.</p>
+
+            <p><pre><xmp>
+int x = 5;
+
+while (x < 3) {
+    System.out.println("Hello");
+    x++;
+}
+
+            </xmp></pre></p>
+
+            <p>If it is necessary to execute the loop at least once, regardless of whether 
+                the condition is met, the <b>do...while</b> loop is used.
+            </p>
+
+            <p>The syntax of the <b>do...while</b> loop is:</p>
+
+            <p><pre><xmp>
+do {
+    //statement
+} while (condition);
+
+            </xmp></pre></p>
+
+            <p>The <b>do</b> keyword is placed at the beginning, followed by a block of code, 
+            which is the body of the loop. After the code block, the while keyword is used to 
+            define the condition of the loop's execution.</p>
+
+            <p>Now the previous example can be transformed as follows:</p>
+
+            <p><pre><xmp>
+int x = 5;
+
+do {
+    System.out.println("Hello");
+    x++;
+} while (x < 3);
+
+Exit:
+
+Hello
+
+            </xmp></pre></p>
+
+            <p>The conclusion is that the body of the loop was executed once, regardless 
+                of the fact that the condition was not met. <br>The condition check is placed after 
+                the execution of each iteration.
+            </p>
+
+            <h2>Break and continue commands</h2>
+
+            <p>Sometimes it is necessary to contol the execution of a loop based on some 
+                condition within the body of the loop. <br>In such situations, it is possible to use 
+                the <b>break</b> and <b>continue</b> commands.
+            </p>
+
+            <p>The <b>continue</b> command terminates the current iteration and moves on to 
+            the next one. <br>The <b>break</b> command exits the loop.</p>
+
+            <p>Example of using the continue command:</p>
+
+            <p><pre><xmp>
+int i;
+
+for(i=0; i < 100; i++) {
+    if(i > 50) {
+        continue;
+    }
+    System.out.println(i);
+}
+
+System.out.println(i);
+
+            </xmp></pre></p>
+
+            <p>In the example, a <b>for</b> loop was created that will have 100 iterations. <br>However, 
+            within the <b>for</b> loop, a condition is defined that checks if the counter is 
+            greated than 50, if so, the <b>continue</b> command is called. <br>So the exit is:</p>
+
+            <p><b>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 
+                30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+            </b></p>
+
+            <p><b>100</b></p>
+
+            <p>At the end, 100 is printed, which means that the loop was executed all 100 times, 
+                althout not all numbers from 0 to 100 were printed due to <b>continue</b> command.
+            </p>
+
+            <p>Unlike the <b>continue</b> command, the <b>break</b> command exit from the loop.</p>
+
+            <p>Example:</p>
+
+            <p><pre><xmp>
+int i;
+
+for(i=0; i < 100; i++) {
+    if(i > 50) {
+        break;
+    }
+    System.out.println(i);
+}
+                
+System.out.println(i);
+
+            </xmp></pre></p>
+
+            <p>Now the output will be:</p>
+
+            <p><b>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 
+                30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+            </b></p>
+
+            <p><b>51</b></p>
+
+            <p>Now the execution of the loop is finished when the variable reaches a value greater 
+                than 50, because the <b>break</b> command is defined by the condition.
+            </p>
+
+            <p><pre>
+
+
+            </pre></p>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a class="brandLogo" href="../index.html">Jelecode</a>
+            <a class="privacyPolicy" 
+            href="https://www.freeprivacypolicy.com/live/aac3d1a9-c016-45cc-8ee2-06aac0b82c64" 
+            target="_blank">Privacy Policy</a>
+        </div>
+    </div>
+
+</body>
+</html>
