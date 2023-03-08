@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Creating a body shape calculator Android App</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="post-content">
+
+           <h1>Creating a Body Shape Calculator Android App</h1>
+
+           <h3>Female body shape</h3>
+
+           <p>Depending on the proportions of the female body (ratio of waist, chest and hips), there are 
+            several established shapes of the female body.
+           </p>
+
+           <p>Thus, a female figure with ideal proportions (90 - 60 - 90) is otherwise called <b>hourglass</b>, 
+            given that its shape resembles this object.</p>
+
+            <p>Forms of the female body :</p>
+
+            <p>- <b>banana</b> (when the ratio of the waist-to-chest, but also waist-to-hips is 
+            less than 1,4),</p>
+
+            <p>- <b>apple</b> (when the waist-to-chest ratio is more than 0,2 greater than the 
+                waist-to-hips),
+            </p>
+
+            <p>- <b>pear</b> (when the waist-to-hips ratio is more than 0,2 greater than the 
+            waist-to-chest ratio),</p>
+
+            <p>- <b>hourglass</b> (when the waist-to-chest and waist-to-hips ratios are 
+            approximately 1,5).</p>
+
+            <h2>Program logic</h2>
+
+            <p>To determine the shape of the female body, one method will be needed that will 
+                accept three parameters, chest circumference, waist circumference and hips 
+                circumference.
+            </p>
+
+            <p>At the beginning, the waist-to-chest ratio, as well as waist-to-hips ratio will be 
+                calculated. Then such ratios will be used to determine the figure.
+            </p>
+
+            <h2>Watch the full video to create this app:</h2>
+
+            <div class="video_link">
+                <a href="" target="_blank">Creating a Body Shape Calculator Android App</a>
+            </div>
+
+            <h1>Complete source code</h1>
+
+            <h2>XML file of the main activity</h2>
+
+            <p><pre><xmp>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/bodyshape" />
+
+    <EditText
+        android:id="@+id/weistText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="waist (cm)"
+        android:imeOptions="actionDone"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/chestText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="chest (cm)"
+        android:imeOptions="actionDone"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/hipsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="hips (cm)"
+        android:imeOptions="actionDone"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Calculate"
+        android:onClick="calculateButtonClick"/>
+
+</LinearLayout>
+
+            </xmp></pre></p>
+
+            <h2>Helper Class for Calculating Body Shape</h2>
+
+            <p><pre><xmp>
+package com.jelenko.bodyshape.core;
+
+public class ShapeCalculator {
+
+    public String calculateBodyShape (double chestCm, double waistCm, double hipsCm) {
+        String shape = "";
+
+        double chestWaistRatio = chestCm / waistCm;
+        double hipsWaistRatio = hipsCm / waistCm;
+
+        if(chestWaistRatio < 1.4 && hipsWaistRatio < 1.4) {
+            shape = "Banana";
+        } else if (chestWaistRatio - hipsWaistRatio >= 0.2) {
+            shape = "Apple";
+        } else if (hipsWaistRatio - chestWaistRatio >= 0.2) {
+            shape = "Pear";
+        } else {
+            shape = "Hourglass";
+        }
+
+        return shape;
+    }
+}
+
+            </xmp></pre></p>
+
+            <h2>Main Activity of the App</h2>
+
+            <p><pre><xmp>
+package com.jelenko.bodyshape;
+
+import androidx.appcompat.app.AppCompatActivity;
+                
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+                
+import com.jelenko.bodyshape.core.ShapeCalculator;
+                
+public class MainActivity extends AppCompatActivity {
+                
+    EditText chestText, waistText, hipsText;
+                
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+                
+        chestText = findViewById(R.id.chestText);
+        waistText = findViewById(R.id.weistText);
+        hipsText = findViewById(R.id.hipsText);
+                
+    }
+                
+                
+    public void calculateButtonClick(View view) {
+                
+        double chest, waist, hips;
+                
+                
+        if(!(chestText.getText().toString().equals("")) && !(waistText.getText().toString().equals("")) &&
+            !(hipsText.getText().toString().equals(""))) {
+
+            chest = Double.parseDouble(chestText.getText().toString());
+            waist = Double.parseDouble(waistText.getText().toString());
+            hips = Double.parseDouble(hipsText.getText().toString());
+                
+            ShapeCalculator shapeCalculator = new ShapeCalculator();
+                
+            String bodyShape = shapeCalculator.calculateBodyShape(chest, waist, hips);
+                
+            String resultText = "Your Body Shape is: " + bodyShape;
+                
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setTitle("Body Shape");
+            alertDialogBuilder.setMessage(resultText);
+            alertDialogBuilder.setPositiveButton("DONE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    chestText.setText("");
+                    waistText.setText("");
+                    hipsText.setText("");
+                }
+            });
+                
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+                
+        } else {
+            Toast.makeText(this, "Please input all data!", Toast.LENGTH_SHORT).show();
+        }
+    }
+} 
+
+
+
+            </xmp></pre></p>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a class="brandLogo" href="../index.html">Jelecode</a>
+            <a class="privacyPolicy" 
+            href="https://www.freeprivacypolicy.com/live/aac3d1a9-c016-45cc-8ee2-06aac0b82c64" 
+            target="_blank">Privacy Policy</a>
+        </div>
+    </div>
+
+</body>
+</html>
