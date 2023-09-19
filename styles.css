@@ -308,8 +308,8 @@ form {
 .post-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    width: 60%;
-    padding-left: 5%;
+    width: 80%;
+    padding-left: 10%;
 }
 
 
