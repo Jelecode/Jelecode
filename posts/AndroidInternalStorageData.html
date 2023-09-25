@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Android Internal Storage Data</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6140574891313676"
+     crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon/icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <div class="navigation-wrapper">
+        <div class="left-side">
+            <div class="brand">
+                <a href="../index.html">Jelecode</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="navigation-link-wrapper">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=Jelenko" target="_blank">Apps</a>
+            </div>
+                
+            <div class="navigation-link-wrapper">
+                <a href="../about.html">About</a>
+            </div>
+
+            <div class="navigation-link-wrapper">
+                <a href="../ContactUs.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+</head>
+
+<body>
+
+    <div class="post-wrapper">
+    
+        <div class="post-content">
+
+            <h1>Android Internal Storage</h1>
+
+            <p>The  simplest way to save the data of an Android application is to save it inside files.</p>
+
+            <p>For these purposes, the I/O API (input/output application Programming interface) 
+                provided by the Java Programming language is used.
+            </p>
+
+            <p>Internal Storage in the Android system means that files for saving such data will 
+                be located in the same location as the Android application.
+            </p>
+
+            <h1>Creating an Android application with internal storage</h1>
+
+            <p>We'll create an application that will save the user's name in the file 
+                system, and display it by pressing a button.
+            </p>
+
+            <h2>XML file of the main activity</h2>
+
+            <p><pre><xmp>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/addText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Name"
+        android:textSize="24dp"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="ADD"
+        app:layout_constraintBottom_toTopOf="@+id/getText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addText" />
+
+    <TextView
+        android:id="@+id/getText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/getButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+
+    <Button
+        android:id="@+id/getButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET NAME"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+            </xmp></pre></p>
+
+            <img src="../images/Android/AndroidInternalStorageData/InternalStoragePicture1.png">
+
+            <p>From the xml file we can see that the interface of this application will 
+                consist of one EditText element, one TextView element and two buttons.
+            </p>
+
+            <p>In the EditText element the user will be able to enter his name and by pressing 
+                the first button to save it in the internal storage inside the file.
+            </p>
+
+            <p>By pressing the second button, the name will be read from the file and displayed in 
+                the TextView element.
+            </p>
+
+            <h2>Main Activity of the App</h2>
+
+            <p><pre><xmp>
+package com.jelenko.internalstorage;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText addText;
+    TextView getText;
+    Button addButton, getButton;
+    String FILENAME = "demo_file";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        addText = findViewById(R.id.addText);
+        getText = findViewById(R.id.getText);
+        addButton = findViewById(R.id.addButton);
+        getButton = findViewById(R.id.getButton);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!(addText.getText().toString().equals(""))) {
+
+                    String DATA = addText.getText().toString();
+
+                    FileOutputStream fos = null;
+
+                    try {
+
+                        fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+                        fos.write(DATA.getBytes());
+
+                        addText.setText("");
+
+                    } catch (IOException exc) {
+
+                        exc.printStackTrace();
+
+                    } finally {
+                        if(fos != null) {
+                            try {
+                                fos.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Add your name", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        getButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FileInputStream fis = null;
+
+                StringBuilder sb = new StringBuilder();
+
+                try {
+
+                    fis = openFileInput(FILENAME);
+                    InputStreamReader isr = new InputStreamReader(fis);
+                    BufferedReader bufferedReader = new BufferedReader(isr);
+
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        sb.append(line);
+                    }
+
+                    getText.setText(sb.toString());
+
+                } catch (IOException exc) {
+
+                    exc.printStackTrace();
+
+                } finally {
+
+                    if(fis != null) {
+                        try {
+                            fis.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }
+        });
+
+    }
+}
+
+            </xmp></pre></p>
+
+            <p>Within the Main Activity, functionalities for writing and reading data from the 
+                Internal Storage will be processed.
+            </p>
+
+            <img src="../images/Android/AndroidInternalStorageData/InternalStoragePicture2.png">
+
+            <p>The application writes and reads data correctly.</p>
+
+        </div>
+
+        <script async="async" data-cfasync="false" src="//pl20737259.highcpmrevenuegate.com/c559f1398ea47ce354b5db3082e299fa/invoke.js"></script>
+        <div id="container-c559f1398ea47ce354b5db3082e299fa"></div>
+
+    </div>
+
+    <div class="footer">
+        <div class="col1">
+            <h3>LINKS</h3>
+            <a href="../about.html">About</a>
+            <a href="../ContactUs.html">Contact</a>
+            <a href="../JavaHome.html">Java Programming</a>
+            <a href="../AndroidHome.html">Android</a>
+            <a href="../HTMLHome.html">Web Programming</a>
+        </div>
+        <div class="col2">
+            <h3>NEWSLETTER</h3>
+            <form class="form_subscribe">
+                <input type="email" placeholder="Your Email Address">
+                <br>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+        <div class="col3">
+            <a class="brandLogo" href="../index.html">Jelecode</a>
+            <a class="privacyPolicy" 
+            href="../PrivacyPolicy.html" 
+            target="_blank">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='//pl20737215.highcpmrevenuegate.com/c1/7c/7b/c17c7bd45be306f23e8d22283bc7bd6e.js'></script>
+
+</body>
+</html>
